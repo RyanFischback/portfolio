@@ -238,11 +238,11 @@ const openSource = {
 
 const bigProjects = {
   title: "Projects",
-  subtitle: "SOME COOL PROJECTS I'VE WORKED ON",
+  subtitle: "SOME COOL PROJECTS I'VE WORKED ON (MVPs)",
   projects: [
     {
       // image: require("./assets/images/dalLogo.png"),
-      projectName: "The Green Card",
+      projectName: "The Green Card (MVP)",
       projectDesc:
         "The Green Card is a web application implemented for the purpose of converting an informational brochure to be used by Nova Scotia health professionals.",
       footerLink: [
