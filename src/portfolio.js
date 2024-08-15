@@ -182,7 +182,7 @@ const workExperiences = {
     {
       role: "Data Steward",
       company: "Clearwater Seafoods LP",
-      companylogo: require("./assets/images/clearwaterLogo.jpg"),
+      companylogo: require("./assets/images/clearwater.jpg"),
       date: "May 2022 – August 2022",
       descBullets: [
         "Implemented web-based solutions for streamlined data processing, ensuring data accuracy.",
@@ -203,7 +203,7 @@ const workExperiences = {
     {
       role: "Harvest Science Programmer",
       company: "Clearwater Seafoods LP",
-      companylogo: require("./assets/images/clearwaterLogo.jpg"),
+      companylogo: require("./assets/images/clearwater.jpg"),
       date: "June 2019 – January 2021",
       descBullets: [
         "Developed and implemented automated data entry solutions using C# and SQL, eliminating 100% of manual data-entry efforts.",
@@ -215,7 +215,7 @@ const workExperiences = {
     {
       role: "Programming Co-op",
       company: "Clearwater Seafoods LP",
-      companylogo: require("./assets/images/clearwaterLogo.jpg"),
+      companylogo: require("./assets/images/clearwater.jpg"),
       date: "May 2019 – June 2019",
       descBullets: [
         "Collected and labeled data for a proof-of-concept machine learning application.",
