@@ -111,10 +111,6 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "Jenkins",
       fontAwesomeClassname: "fab fa-jenkins"
-    },
-    {
-      skillName: "GO",
-      fontAwesomeClassname: "fab fa-golang"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -389,7 +385,7 @@ const podcastSection = {
 const resumeSection = {
   title: "Resume",
   subtitle: "Feel free to download my resume",
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 const contactInfo = {
