@@ -248,7 +248,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "Visit Project",
-          url: "https://github.com/RyanFischback/W2023-GPGC"
+          url: "https://w2023-gpgc.netlify.app/"
         }
         //  you can add extra buttons here.
       ]
