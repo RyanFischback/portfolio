@@ -49,7 +49,7 @@ const skillsSection = {
       "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
     ),
     emoji(
-      "⚡ Build simple, scalable, and effective backend techonlogies to cut costs and optimize systems"
+      "⚡ Build simple, scalable, and effective backend techonlogies to cut costs, implement new features, and maintain and optimize systems"
     ),
     emoji(
       "⚡ Integration of third party services such as AWS / Jenkins / Terraform"
