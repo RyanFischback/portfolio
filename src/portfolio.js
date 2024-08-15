@@ -23,7 +23,7 @@ const greeting = {
   username: "Ryan Fischback",
   title: "Hi there, I'm Ryan",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 with extensive experience building Web and Mobile applications with TypeScript / ReactJS / NodeJS / .NET and some other cool libraries and frameworks!"
+    "A passionate Full Stack Software Developer 🚀 with extensive experience building Web and Mobile applications with TypeScript / ReactJS / Python / NodeJS / .NET / C# and some other cool libraries and frameworks!"
   ),
   resumeLink:
     "https://docs.google.com/document/d/1k6k727w6s9Q1IQM_8xHmbdUpUue0CEByHgOTrjkXcSA/edit?usp=sharing", // Set to empty to hide the button
@@ -46,7 +46,7 @@ const skillsSection = {
     "RESULTS-ORIENTED FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ Develop highly interactive Front End / User Interfaces for your web and mobile applications"
     ),
     emoji(
       "⚡ Build simple, scalable, and effective backend techonlogies to cut costs, implement new features, and maintain and optimize systems"
@@ -103,6 +103,18 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "aws",
       fontAwesomeClassname: "fab fa-aws"
+    },
+    {
+      skillName: "Linux",
+      fontAwesomeClassname: "fab fa-linux"
+    },
+    {
+      skillName: "Jenkins",
+      fontAwesomeClassname: "fab fa-jenkins"
+    },
+    {
+      skillName: "GO",
+      fontAwesomeClassname: "fab fa-golang"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -229,12 +241,11 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle:
-    "SOME COOL PROJECTS I WAS THE TECHNICAL LEAD FOR FROM DALHOUSIE UNIVERSITY",
+  title: "Projects",
+  subtitle: "SOME COOL PROJECTS I'VE WORKED ON",
   projects: [
     {
-      image: require("./assets/images/dalLogo.png"),
+      // image: require("./assets/images/dalLogo.png"),
       projectName: "The Green Card",
       projectDesc:
         "The Green Card is a web application implemented for the purpose of converting an informational brochure to be used by Nova Scotia health professionals.",
@@ -247,7 +258,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/paypalLogo.png"),
+      // image: require("./assets/images/dalLogo.png"),
       projectName: "Quick Cash",
       projectDesc:
         "Mobile App developed in Android Studio using Java, Firebase (BaaS), PayPal. Users can register as an employee or an employer to post/apply to jobs in their location, and pay/get paid, after the job has been marked as complete.",
