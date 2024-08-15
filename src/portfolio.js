@@ -237,7 +237,7 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Projects",
+  title: "Client Projects",
   subtitle: "SOME COOL PROJECTS I'VE WORKED ON (MVPs)",
   projects: [
     {
