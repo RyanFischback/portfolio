@@ -26,7 +26,7 @@ const greeting = {
     "A passionate Full Stack Software Developer 🚀 with extensive experience building Web and Mobile applications with TypeScript / ReactJS / Python / NodeJS / .NET / C# and some other cool libraries and frameworks!"
   ),
   resumeLink:
-    "https://docs.google.com/document/d/1k6k727w6s9Q1IQM_8xHmbdUpUue0CEByHgOTrjkXcSA/edit?usp=sharing", // Set to empty to hide the button
+    "https://docs.google.com/document/d/1GXTi_5XO-QIUHuOUQIyBSOLa8HfsL6oJ9xW3P5ysDuI/edit?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -127,7 +127,7 @@ const educationInfo = {
       subHeader: "Bachelor of Applied Computer Science",
       duration: "Janurary 2021 - April 2023",
       desc: "Took courses about Software Engineering, Project Management, Mobile Development, Technology Innovation, ...",
-      descBullets: ["3x Secton Scholar Award", "Overall GPA of 3.91"]
+      descBullets: ["3x Sexton Scholar Award", "Overall GPA of 3.91"]
     },
     {
       schoolName: "Nova Scotia Community College",
@@ -237,14 +237,27 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Client Projects",
-  subtitle: "SOME COOL PROJECTS I'VE WORKED ON (MVPs)",
+  title: "Live Projects",
+  subtitle:
+    "SOME COOL PROJECTS I'VE WORKED ON (For Clients & Personal Projects)",
   projects: [
     {
-      // image: require("./assets/images/dalLogo.png"),
-      projectName: "The Green Card (MVP)",
+      image: require("./assets/images/coverly.png"),
+      projectName: "Coverly (Personal Project)",
       projectDesc:
-        "The Green Card is a web application implemented for the purpose of converting an informational brochure to be used by Nova Scotia health professionals.",
+        "Coverly is a user-friendly web application designed to streamline the process of generating professional cover letters through user-provided prompts. This project aims to offer a seamless and efficient experience, enabling users to create personalized and impactful cover letters with minimal effort. ",
+      footerLink: [
+        {
+          name: "Visit Project",
+          url: "https://coverly.ca/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/dalLogo.png"),
+      projectName: "The Green Card (Client: Dalhousie University)",
+      projectDesc:
+        "The Green Card is a MVP web application implemented for the purpose of converting an informational brochure to be used by Nova Scotia health professionals.",
       footerLink: [
         {
           name: "Visit Project",
@@ -254,15 +267,16 @@ const bigProjects = {
       ]
     },
     {
-      // image: require("./assets/images/dalLogo.png"),
-      projectName: "Quick Cash",
+      image: require("./assets/images/clearwater.png"),
+      projectName: "Object Tracker (Client: Clearwater Seafoods LP)",
       projectDesc:
-        "Mobile App developed in Android Studio using Java, Firebase (BaaS), PayPal. Users can register as an employee or an employer to post/apply to jobs in their location, and pay/get paid, after the job has been marked as complete.",
+        "Computer vision project that tracks specific objects using the Euclidean distance algorithm. The project focuses on accurately identifying and monitoring objects in real-time.",
       footerLink: [
         {
           name: "Visit Project",
-          url: "https://github.com/RyanFischback/find-work"
+          url: "https://github.com/RyanFischback/ObjectTracking"
         }
+        //  you can add extra buttons here.
       ]
     }
   ],
