@@ -191,7 +191,7 @@ const workExperiences = {
       ]
     },
     {
-      role: "AQA Developer",
+      role: "Software Developer",
       company: "Garvin-Allen Solutions Ltd",
       companylogo: require("./assets/images/gaLogo.jpg"),
       date: "May 2021 – August 2021",
@@ -201,7 +201,7 @@ const workExperiences = {
       ]
     },
     {
-      role: "Harvest Science Programmer",
+      role: "Software Developer",
       company: "Clearwater Seafoods LP",
       companylogo: require("./assets/images/clearwater.png"),
       date: "June 2019 – January 2021",
@@ -237,7 +237,7 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Live Projects",
+  title: "More Projects",
   subtitle:
     "SOME COOL PROJECTS I'VE WORKED ON (For Clients & Personal Projects)",
   projects: [
