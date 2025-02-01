@@ -127,7 +127,10 @@ const educationInfo = {
       subHeader: "Bachelor of Applied Computer Science",
       duration: "Janurary 2021 - April 2023",
       desc: "Took courses about Software Engineering, Project Management, Mobile Development, Technology Innovation, ...",
-      descBullets: ["3x Sexton Scholar Award", "Overall GPA of 3.91"]
+      descBullets: [
+        "3x Sexton Scholar Award (Top Academic Standing)",
+        "Overall GPA of 3.91"
+      ]
     },
     {
       schoolName: "Nova Scotia Community College",
@@ -166,6 +169,17 @@ const techStack = {
 const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
+    {
+      role: "Software Engineer",
+      company: "VGen",
+      companylogo: require("./assets/images/vglogo.png"),
+      date: "Oct 2024 – Present",
+      descBullets: [
+        "Develop and ship high-quality software solutions, transforming complex designs into seamless experiences for over 280,000+ registered users.",
+        "Optimize cloud infrastructure and deployment pipelines, ensuring minimal downtime during updates for 50,000+ concurrent users.",
+        "Implement live updates and performance enhancements, boosting user experience and maintaining high system reliability."
+      ]
+    },
     {
       role: "Full Stack Developer",
       company: "Modest Tree Media Inc",
