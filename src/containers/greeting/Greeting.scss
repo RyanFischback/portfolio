@@ -53,6 +53,11 @@
   height: auto;
 }
 
+.dark-mode .greeting-text,
+.dark-mode .greeting-text-p {
+  color: $textColorDark !important;
+}
+
 .wave-emoji {
   animation-duration: 1.8s;
   animation-iteration-count: infinite;

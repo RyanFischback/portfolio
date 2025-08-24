@@ -150,11 +150,11 @@ const techStack = {
   experience: [
     {
       Stack: "Backend",
-      progressPercentage: "90%"
+      progressPercentage: "85%"
     },
     {
       Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "80%" //Insert relative proficiency in percentage
+      progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
       Stack: "Dev-Ops",
@@ -167,7 +167,7 @@ const techStack = {
 // Work experience section
 
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
   experience: [
     {
       role: "Software Engineer",
@@ -175,9 +175,9 @@ const workExperiences = {
       companylogo: require("./assets/images/vglogo.png"),
       date: "Oct 2024 – Present",
       descBullets: [
-        "Develop and ship high-quality software solutions, transforming complex designs into seamless experiences for over 280,000+ registered users.",
-        "Optimize cloud infrastructure and deployment pipelines, ensuring minimal downtime during updates for 50,000+ concurrent users.",
-        "Implement live updates and performance enhancements, boosting user experience and maintaining high system reliability."
+        "Built and shipped software solutions serving 320,000+ registered users, ensuring seamless, scalable experiences.",
+        "Optimized cloud infrastructure and deployment pipelines to support 50,000+ concurrent users with zero downtime during updates.",
+        "Delivered performance enhancements and live updates that improved reliability and boosted user engagement."
       ]
     },
     {
@@ -186,59 +186,37 @@ const workExperiences = {
       companylogo: require("./assets/images/modesttree.png"),
       date: "May 2023 – June 2024",
       descBullets: [
-        "Architected and containerized full stack web applications with Docker, streamlining CI/CD processes and enhancing setup efficiency for both clients and developers.",
-        "Led a team of developers in integrating an LLM-based chatbot using Python, TypeScript, and Docker, driving effective collaboration and guiding the development process to enhance data management workflows and user interactions, which accelerated client operations.",
-        "Developed and deployed dynamic dashboards for general analytics, aiding decision-making and data comprehension from product management and, administrative perspectives.",
-        "Maintained and optimized existing products using React, TypeScript, CSS, C#, .NET, and Jenkins, enhancing software health, eliminating bugs, and improving overall user experience.",
-        "Collaborated with stakeholders to define and implement effective software processes, ensuring timely delivery of client needs in alignment with a release-based schedule."
+        "Led a team to integrate an LLM-powered chatbot (Python, TypeScript, Docker), improving client data workflows and accelerating operations.",
+        "Architected and containerized full-stack apps with Docker, streamlining CI/CD and reducing onboarding time for developers.",
+        "Developed analytics dashboards for product and admin teams, enabling data-driven decision-making.",
+        "Maintained and optimized React, TypeScript, and .NET applications, enhancing software stability and user experience."
       ]
     },
     {
-      role: "Data Steward",
+      role: "Software Developer / Data Steward (Multiple Roles)",
       company: "Clearwater Seafoods LP",
       companylogo: require("./assets/images/clearwater.png"),
-      date: "May 2022 – August 2022",
+      date: "May 2019 – Aug 2022",
       descBullets: [
-        "Implemented web-based solutions for streamlined data processing, ensuring data accuracy.",
-        "Maintained and optimized existing products through regular bug fixes and feature implementations, enhancing functionality and improving overall user experience.",
-        "Designed comprehensive data reports using SSRS to demonstrate product effectiveness and support client decision-making."
+        "Designed and implemented automated C# and SQL data-entry solutions, eliminating 100% of manual input and saving 2+ hrs/day.",
+        "Built SSRS data reporting systems that informed executive decision-making and improved client visibility.",
+        "Developed a computer vision proof-of-concept (Python, OpenCV, TensorFlow) that reduced product waste with real-time alerts.",
+        "Maintained and enhanced ASP.NET applications, improving functionality and user satisfaction across multiple departments."
       ]
     },
     {
-      role: "Software Developer",
+      role: "Software Developer (Internship)",
       company: "Garvin-Allen Solutions Ltd",
       companylogo: require("./assets/images/gaLogo.jpg"),
-      date: "May 2021 – August 2021",
+      date: "May 2021 – Aug 2021",
       descBullets: [
-        "Engineered automated test suites using Ranorex to validate software functionality.",
-        "Managed data quality and consistency, leading to an improvement in software reliability."
-      ]
-    },
-    {
-      role: "Software Developer",
-      company: "Clearwater Seafoods LP",
-      companylogo: require("./assets/images/clearwater.png"),
-      date: "June 2019 – January 2021",
-      descBullets: [
-        "Developed and implemented automated data entry solutions using C# and SQL, eliminating 100% of manual data-entry efforts.",
-        "Collaborated on large-scale data management projects, ensuring data integrity and security through effective communication and development processes.",
-        "Designed comprehensive data reports using SSRS to demonstrate product effectiveness and support client decision-making.",
-        "Maintained and optimized existing products through regular bug fixes and feature implementations, enhancing functionality and improving overall user experience."
-      ]
-    },
-    {
-      role: "Programming Co-op",
-      company: "Clearwater Seafoods LP",
-      companylogo: require("./assets/images/clearwater.png"),
-      date: "May 2019 – June 2019",
-      descBullets: [
-        "Collected and labeled data for a proof-of-concept machine learning application.",
-        "Developed a computer vision application for real-time object detection using OpenCV and TensorFlow.",
-        "Programmed and deployed Arduino-based systems for environmental monitoring"
+        "Engineered automated test suites with Ranorex, reducing manual QA time and increasing release confidence.",
+        "Improved data quality processes, raising software reliability across core product lines."
       ]
     }
   ]
 };
+
 
 /* Your Open Source Section to View Your Github Pinned Projects
 To know how to get github key look at readme.md */
