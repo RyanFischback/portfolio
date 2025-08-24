@@ -26,7 +26,7 @@ const greeting = {
     "A passionate Full Stack Software Developer 🚀 with extensive experience building Web and Mobile applications with TypeScript / ReactJS / Python / NodeJS / .NET / C# and some other cool libraries and frameworks!"
   ),
   resumeLink:
-    "https://docs.google.com/document/d/1GXTi_5XO-QIUHuOUQIyBSOLa8HfsL6oJ9xW3P5ysDuI/edit?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1Q_hqbAe9CGexHp6srgvwhKMWW02v0Kei/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -216,7 +216,6 @@ const workExperiences = {
     }
   ]
 };
-
 
 /* Your Open Source Section to View Your Github Pinned Projects
 To know how to get github key look at readme.md */
