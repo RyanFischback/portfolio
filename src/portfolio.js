@@ -229,8 +229,7 @@ const openSource = {
 
 const bigProjects = {
   title: "More Projects",
-  subtitle:
-    "SOME COOL PROJECTS I'VE WORKED ON (For Clients & Personal Projects)",
+  subtitle: "SOME COOL PROJECTS I'VE CREATED (For Clients & Personal Projects)",
   projects: [
     {
       image: require("./assets/images/vglogo.png"),
