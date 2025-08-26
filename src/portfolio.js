@@ -233,6 +233,22 @@ const bigProjects = {
     "SOME COOL PROJECTS I'VE WORKED ON (For Clients & Personal Projects)",
   projects: [
     {
+      image: require("./assets/images/vglogo.png"),
+      projectName: "VGen Challenge Dashboard (Client: VGen)",
+      projectDesc:
+        "The VGen Challenge Dashboard is the home of VGen’s monthly competitions, where creativity meets community. Artists can enter themed challenges, showcase their work, and rally support as the community votes for their favorites. Winners earn recognition, exclusive badges, and exciting prizes, making every challenge a celebration of talent.",
+      footerLink: [
+        {
+          name: "Explore Challenges",
+          url: "https://vgen.co/challenge"
+        },
+        {
+          name: "View Winners",
+          url: "https://vgen.co/challenge/jul-2025"
+        }
+      ]
+    },
+    {
       image: require("./assets/images/coverly.png"),
       projectName: "Coverly (Personal Project)",
       projectDesc:
@@ -254,7 +270,6 @@ const bigProjects = {
           name: "Visit Project",
           url: "https://w2023-gpgc.netlify.app/"
         }
-        //  you can add extra buttons here.
       ]
     },
     {
@@ -267,7 +282,6 @@ const bigProjects = {
           name: "Visit Project",
           url: "https://github.com/RyanFischback/ObjectTracking"
         }
-        //  you can add extra buttons here.
       ]
     }
   ],
