@@ -236,7 +236,7 @@ const bigProjects = {
       image: require("./assets/images/vglogo.png"),
       projectName: "VGen Challenge Dashboard (Client: VGen)",
       projectDesc:
-        "The VGen Challenge Dashboard is the home of VGen’s monthly competitions, where creativity meets community. Artists can enter themed challenges, showcase their work, and rally support as the community votes for their favorites. Winners earn recognition, exclusive badges, and exciting prizes, making every challenge a celebration of talent.",
+        "Where creativity meets community - Artists can enter themed challenges, showcase their work, and rally support as the community votes for their favorites. Winners earn recognition, exclusive badges, and exciting prizes, making every challenge a celebration of talent.",
       footerLink: [
         {
           name: "Explore Challenges",
