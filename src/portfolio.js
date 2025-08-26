@@ -228,14 +228,14 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "More Projects",
-  subtitle: "SOME COOL PROJECTS I'VE CREATED (For Clients & Personal Projects)",
+  title: "Projects",
+  subtitle: "SOME COOL PROJECTS I'VE CREATED (For Clients & Personal)",
   projects: [
     {
       image: require("./assets/images/vglogo.png"),
-      projectName: "#VGenChallenge (Client: VGen)",
+      projectName: "#VGenChallenge (VGen)",
       projectDesc:
-        "Where creativity meets community - Artists can enter themed challenges, showcase their work, and rally support as the community votes for their favorites. Winners earn recognition, exclusive badges, and exciting prizes, making every challenge a celebration of talent.",
+        "Where creativity meets community! Artists can enter themed challenges, showcase their work, and rally support as the community votes for their favorites. Winners earn recognition, exclusive badges, and exciting prizes, making every challenge a celebration of talent.",
       footerLink: [
         {
           name: "Explore Challenges",
@@ -249,7 +249,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/coverly.png"),
-      projectName: "Coverly (Personal Project)",
+      projectName: "Coverly (Personal)",
       projectDesc:
         "Coverly is a user-friendly web application designed to streamline the process of generating professional cover letters through user-provided prompts. This project aims to offer a seamless and efficient experience, enabling users to create personalized and impactful cover letters with minimal effort. ",
       footerLink: [
@@ -261,7 +261,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/dalLogo.png"),
-      projectName: "The Green Card (Client: Dalhousie University)",
+      projectName: "The Green Card (Dalhousie University)",
       projectDesc:
         "The Green Card is a MVP web application implemented for the purpose of converting an informational brochure to be used by Nova Scotia health professionals.",
       footerLink: [
@@ -273,7 +273,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/clearwater.png"),
-      projectName: "Object Tracker (Client: Clearwater Seafoods LP)",
+      projectName: "Object Tracker (Clearwater Seafoods LP)",
       projectDesc:
         "Computer vision project that tracks specific objects using the Euclidean distance algorithm. The project focuses on accurately identifying and monitoring objects in real-time.",
       footerLink: [
@@ -432,8 +432,8 @@ export {
   educationInfo,
   techStack,
   workExperiences,
-  openSource,
   bigProjects,
+  openSource,
   achievementSection,
   blogSection,
   talkSection,
