@@ -173,11 +173,12 @@ const workExperiences = {
       role: "Software Engineer",
       company: "VGen",
       companylogo: require("./assets/images/vglogo.png"),
-      date: "Oct 2024 – Present",
+      date: "Oct 2024 – Sept 2025",
       descBullets: [
-        "Built and shipped software solutions serving 320,000+ registered users, ensuring seamless, scalable experiences.",
-        "Optimized cloud infrastructure and deployment pipelines to support 50,000+ concurrent users with zero downtime during updates.",
-        "Delivered performance enhancements and live updates that improved reliability and boosted user engagement."
+        "Built and shipped software solutions serving 550,000+ registered users, ensuring seamless, scalable experiences.",
+        "Optimized cloud infrastructure and deployment pipelines to support 50,000+ concurrent users with minimal downtime during updates.",
+        "Delivered real-time performance enhancements and live updates, improving reliability and user satisfaction.",
+        "Built internal moderation tooling that streamlines operations for trust & safety teams."
       ]
     },
     {
