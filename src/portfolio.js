@@ -43,7 +43,7 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle:
-    "RESULTS-ORIENTED FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+    "FULL-STACK SOFTWARE ENGINEER 🚀 DELIVERING SCALABLE SYSTEMS, MODERN CLOUD ARCHITECTURES, AND BUSINESS-DRIVEN SOLUTIONS",
   skills: [
     emoji(
       "⚡ Develop highly interactive Front End / User Interfaces for your web and mobile applications"
@@ -52,7 +52,7 @@ const skillsSection = {
       "⚡ Build simple, scalable, and effective backend techonlogies to cut costs, implement new features, and maintain and optimize systems"
     ),
     emoji(
-      "⚡ Integration of third party services such as AWS / Jenkins / Terraform"
+      "⚡ Integration of third party services and custom development solutions"
     )
   ],
 
