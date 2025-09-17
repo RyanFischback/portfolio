@@ -43,7 +43,7 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle:
-    "FULL-STACK SOFTWARE ENGINEER 🚀 DELIVERING SCALABLE SYSTEMS, MODERN CLOUD ARCHITECTURES, AND BUSINESS-DRIVEN SOLUTIONS",
+    "FULL-STACK SOFTWARE ENGINEER DELIVERING SCALABLE SYSTEMS, MODERN CLOUD ARCHITECTURES, AND BUSINESS-DRIVEN SOLUTIONS",
   skills: [
     emoji(
       "⚡ Develop highly interactive Front End / User Interfaces for your web and mobile applications"
