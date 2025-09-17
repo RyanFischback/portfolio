@@ -23,7 +23,7 @@ const greeting = {
   username: "Ryan Fischback",
   title: "Hi there, I'm Ryan",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 with extensive experience building Web and Mobile applications with TypeScript / ReactJS / Python / NodeJS / .NET / C# and some other cool libraries and frameworks!"
+    "I’m a full-stack developer 🚀 who loves building systems that actually make sense — practical, scalable, and driven by real business needs!"
   ),
   resumeLink:
     "https://drive.google.com/file/d/1SWs9IWj8EqV0KhzAvFY94Zp7BSMPnL5j/view?usp=sharing", // Set to empty to hide the button
