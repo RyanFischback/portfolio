@@ -189,8 +189,8 @@ const workExperiences = {
       descBullets: [
         "Led a team to integrate an LLM-powered chatbot (Python, TypeScript, Docker), improving client data workflows and accelerating operations.",
         "Architected and containerized full-stack apps with Docker, streamlining CI/CD and reducing onboarding time for developers.",
-        "Developed analytics dashboards for product and admin teams, enabling data-driven decision-making.",
-        "Maintained and optimized React, TypeScript, and .NET applications, enhancing software stability and user experience."
+        "Developed interactive analytics dashboards, enabling product and admin teams to make faster, data-driven decisions.",
+        "Enhanced React, TypeScript, and .NET applications, resulting in higher stability, fewer bugs, and better UX."
       ]
     },
     {
@@ -199,10 +199,10 @@ const workExperiences = {
       companylogo: require("./assets/images/clearwater.png"),
       date: "May 2019 – Aug 2022",
       descBullets: [
-        "Designed and implemented automated C# and SQL data-entry solutions, eliminating 100% of manual input and saving 2+ hrs/day.",
-        "Built SSRS data reporting systems that informed executive decision-making and improved client visibility.",
-        "Developed a computer vision proof-of-concept (Python, OpenCV, TensorFlow) that reduced product waste with real-time alerts.",
-        "Maintained and enhanced ASP.NET applications, improving functionality and user satisfaction across multiple departments."
+        "Built C# and SQL automation that replaced manual data entry, saving 10 hrs/week and improving data reliability.",
+        "Built SSRS reports that gave leadership visibility into product effectiveness and guided strategic decisions.",
+        "Enhanced ASP.NET and SQL applications, improving functionality and system reliability across departments.",
+        "Launched an object detection system to track and reduce product waste on vessels, improving operational insight."
       ]
     },
     {
