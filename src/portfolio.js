@@ -187,7 +187,7 @@ const workExperiences = {
       companylogo: require("./assets/images/modesttree.png"),
       date: "May 2023 – June 2024",
       descBullets: [
-        "Led a team to integrate an LLM-powered chatbot (Python, TypeScript, Docker), improving client data workflows and accelerating operations.",
+        "Technical lead integrating an LLM-powered chatbot (Python, TypeScript, Docker), improving client data workflows and accelerating operations.",
         "Architected and containerized full-stack apps with Docker, streamlining CI/CD and reducing onboarding time for developers.",
         "Developed interactive analytics dashboards, enabling product and admin teams to make faster, data-driven decisions.",
         "Enhanced React, TypeScript, and .NET applications, resulting in higher stability, fewer bugs, and better UX."
