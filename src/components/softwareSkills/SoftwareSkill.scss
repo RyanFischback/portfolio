@@ -1,31 +1,70 @@
 @import "../../_globalColor";
 
+.software-skills-main-div {
+  margin: 1.5rem 0;
+}
+
 .dev-icons {
   padding-left: 0;
   list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.9rem;
+  margin: 0;
 }
 
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(124, 92, 255, 0.12);
+  box-shadow: 0 20px 45px -35px rgba(15, 23, 42, 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .software-skill-inline > i {
+  color: rgba(124, 92, 255, 0.85);
+  font-size: 1.2rem;
+}
+
+.software-skill-inline > p {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: $subTitle;
 }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
+.software-skill-inline:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 55px -35px rgba(124, 92, 255, 0.55);
 }
-.software-skill-inline > p {
-  color: $subTitle;
-  font-size: 10px;
+
+.software-skill-inline:hover > i {
+  color: #fbbf24;
 }
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+
+.software-skill-inline:hover > p {
+  color: $textColor;
+}
+
+.dark-mode .software-skill-inline {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(124, 92, 255, 0.25);
+  box-shadow: 0 25px 55px -40px rgba(124, 92, 255, 0.55);
+}
+
+.dark-mode .software-skill-inline > p {
+  color: rgba(248, 250, 252, 0.75);
+}
+
+.dark-mode .software-skill-inline:hover > p {
+  color: $textColorDark;
+}
+
+.dark-mode .software-skill-inline > i {
+  color: rgba(167, 139, 250, 0.95);
 }

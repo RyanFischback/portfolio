@@ -1,47 +1,60 @@
 @import "../../_globalColor";
 
 .main-button {
-  background-color: $buttonColor;
-  border: solid 1px $buttonColor;
+  --btn-glow: 0 25px 45px -20px rgba(124, 92, 255, 0.75);
+  background: linear-gradient(120deg, #7c5cff 0%, #36c5f0 100%);
   color: $textColorDark;
+  border: none;
   font-weight: 700;
-  width: max-content;
-  padding: 13px 22px;
-  margin-right: 50px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  border-radius: 6px;
-  text-align: center;
+  padding: 0.95rem 2.5rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
   text-decoration: none;
-  display: block;
-  margin-top: 20px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
+  box-shadow: var(--btn-glow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+.main-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
 .main-button:hover {
-  background-color: $darkBoxShadow2;
-  color: $buttonColor;
-  transition: all 0.3s ease 0s;
-  transform: translateY(-3px);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 32px 55px -30px rgba(124, 92, 255, 0.95);
+  filter: brightness(1.05);
 }
+
+.main-button:hover::after {
+  opacity: 1;
+}
+
 .project-button {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
+
 .project-button > .main-button {
   margin-right: 0 !important;
 }
-/* Media Query */
+
 @media (max-width: 768px) {
   .main-button {
-    font-size: 0.938rem;
-    padding: 12px 18px;
-    margin-right: 0px;
-  }
-}
-@media (max-width: 320px) {
-  .main-button {
-    font-size: 0.75rem;
+    width: 100%;
   }
 }

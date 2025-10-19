@@ -39,6 +39,13 @@ const Main = () => {
     }
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle("dark-theme", isDark);
+    return () => {
+      document.body.classList.remove("dark-theme");
+    };
+  }, [isDark]);
+
   const changeTheme = () => {
     setIsDark(!isDark);
   };
@@ -53,11 +60,11 @@ const Main = () => {
             <Header />
             <Greeting />
             <Skills />
-            <StackProgress />
             <Education />
             <WorkExperience />
             <StartupProject />
             <Projects />
+            <StackProgress />
             <Achievement />
             <Blogs />
             <Talks />

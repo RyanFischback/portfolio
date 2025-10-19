@@ -13,13 +13,14 @@ export default function GithubProfileCard({prof}) {
   }
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="contact">
-        <h1 className="prof-title">Reach Out to me!</h1>
+      <div className="main github-contact" id="contact">
+        <div className="github-contact-header">
+          <span className="section-stage">Chapter 06 · Contact</span>
+          <h1 className="section-heading prof-title">Reach Out to me!</h1>
+          <p className="subTitle blog-subtitle">{contactInfo.subtitle}</p>
+        </div>
         <div className="row">
           <div className="main-content-profile">
-            <div className="blog-header">
-              <p className="subTitle blog-subtitle">{contactInfo.subtitle}</p>
-            </div>
             <h2 className="bio-text">"{emoji(String(prof.bio))}"</h2>
             {prof.location !== null && (
               <div className="location-div">
@@ -49,11 +50,13 @@ export default function GithubProfileCard({prof}) {
             <SocialMedia />
           </div>
           <div className="image-content-profile">
-            <img
-              src={prof.avatarUrl}
-              alt={prof.name}
-              className="profile-image"
-            />
+            <div className="profile-image-wrapper">
+              <img
+                src={prof.avatarUrl}
+                alt={prof.name}
+                className="profile-image"
+              />
+            </div>
           </div>
         </div>
       </div>

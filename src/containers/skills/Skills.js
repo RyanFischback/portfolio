@@ -12,53 +12,39 @@ export default function Skills() {
   if (!skillsSection.display) {
     return null;
   }
+
+  const stageClass = isDark ? "dark-mode" : "";
+
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
+    <div className={`main stage about-section ${stageClass}`} id="skills">
       <div className="skills-main-div">
         <Fade left duration={1000}>
           <div className="skills-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={codingPerson} />
-            ) : (
-              <img
-                alt="Man Working"
-                src={require("../../assets/images/developerActivity.svg")}
-              ></img>
-            )}
+            <div className="skills-visual">
+              {illustration.animated ? (
+                <DisplayLottie animationData={codingPerson} />
+              ) : (
+                <img
+                  alt="Man Working"
+                  src={require("../../assets/images/developerActivity.svg")}
+                ></img>
+              )}
+            </div>
           </div>
         </Fade>
         <Fade right duration={1000}>
           <div className="skills-text-div">
-            <h1
-              className={isDark ? "dark-mode skills-heading" : "skills-heading"}
-            >
-              {skillsSection.title}{" "}
-            </h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode subTitle skills-text-subtitle"
-                  : "subTitle skills-text-subtitle"
-              }
-            >
-              {skillsSection.subTitle}
-            </p>
+            <span className="section-stage">Chapter 02 · About</span>
+            <h1 className="section-heading skills-heading">{skillsSection.title}</h1>
+            <p className="subTitle skills-text-subtitle">{skillsSection.subTitle}</p>
             <SoftwareSkill />
-            <div>
-              {skillsSection.skills.map((skills, i) => {
-                return (
-                  <p
-                    key={i}
-                    className={
-                      isDark
-                        ? "dark-mode subTitle skills-text"
-                        : "subTitle skills-text"
-                    }
-                  >
-                    {skills}
-                  </p>
-                );
-              })}
+            <div className="skills-text-grid">
+              {skillsSection.skills.map((skill, index) => (
+                <div key={index} className="skills-point">
+                  <span className="skills-point-index">0{index + 1}</span>
+                  <p className="skills-text">{skill}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Fade>

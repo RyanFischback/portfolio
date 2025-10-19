@@ -45,8 +45,13 @@ export default function Projects() {
   ) {
     return (
       <Suspense fallback={renderLoader()}>
-        <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
+        <div className="main open-source-section" id="opensource">
+          <div className="open-source-header">
+            <span className="section-stage">Open Source Spotlight</span>
+            <h1 className="section-heading project-title">
+              Open Source Projects
+            </h1>
+          </div>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {
@@ -59,12 +64,14 @@ export default function Projects() {
               );
             })}
           </div>
-          <Button
-            text={"More Projects"}
-            className="project-button"
-            href={socialMediaLinks.github}
-            newTab={true}
-          />
+          <div className="project-button">
+            <Button
+              text={"More Projects"}
+              className="project-button"
+              href={socialMediaLinks.github}
+              newTab={true}
+            />
+          </div>
         </div>
       </Suspense>
     );

@@ -1,7 +1,11 @@
 @import "../_globalColor";
 
 .dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+  background: transparent;
+  color: $textColorDark;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.dark-mode .main::after {
+  border-color: rgba(124, 92, 255, 0.18);
 }

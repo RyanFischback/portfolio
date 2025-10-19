@@ -1,105 +1,148 @@
 @import "../../_globalColor";
 
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; // keeps proportions, no weird stretching
+.projects-section {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  padding: clamp(4.5rem, 9vw, 6.5rem) 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4rem);
 }
 
-.card-title {
-  color: $titleColor;
-  font-size: 20px;
-  line-height: 1.4;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
+.projects-intro {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 15px;
-  line-height: 1.5rem;
-  flex-grow: 1;
-  margin-bottom: 1rem;
+.project-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.8rem, 4vw, 2.5rem);
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  justify-content: flex-start;
-  align-items: stretch;
-  min-height: 420px; // ensures equal card heights
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: clamp(26px, 5vw, 32px);
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  box-shadow: 0 38px 60px -45px rgba(15, 23, 42, 0.45);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
 }
 
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  transition: all 0.3s ease;
-}
-.project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(140deg, rgba(124, 92, 255, 0.08), rgba(54, 197, 240, 0.08));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  transition: all 0.25s ease;
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 55px 80px -55px rgba(124, 92, 255, 0.55);
 }
-.project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+
+.project-card:hover::after {
+  opacity: 1;
 }
 
 .project-image {
-  height: 240px; // fixed image block height for uniformity
-  overflow: hidden;
+  height: clamp(160px, 28vw, 220px);
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.7), rgba(124, 92, 255, 0.2));
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .project-detail {
-  flex: 1; // fill remaining height
+  padding: clamp(1.8rem, 4vw, 2.4rem);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-align: center; // consistent across all cards
+  gap: 1rem;
+  flex: 1;
+}
+
+.card-title {
+  color: $titleColor;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card-subtitle {
+  color: $cardSubtitle;
+  font-size: 1rem;
+  line-height: 1.7;
+  flex: 1;
 }
 
 .project-card-footer {
-  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+  gap: 0.75rem;
+  margin-top: auto;
 }
 
-.project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  height: 2em;
-  white-space: nowrap;
-  line-height: 1.5;
-  padding: 0 0.75em;
+.project-tag {
+  background: rgba(124, 92, 255, 0.15);
+  color: $buttonColor;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+.project-tag:hover {
+  background: linear-gradient(120deg, #7c5cff, #36c5f0);
+  color: $textColorDark;
+}
+
+.project-card-dark {
+  background: rgba(15, 23, 42, 0.68);
+  border-color: rgba(124, 92, 255, 0.28);
+  box-shadow: 0 45px 80px -55px rgba(124, 92, 255, 0.55);
+}
+
+.project-card-dark .card-title,
+.project-card-dark .card-subtitle {
+  color: $textColorDark;
+}
+
+.project-card-dark .project-tag {
+  background: rgba(124, 92, 255, 0.25);
+  color: $textColorDark;
+}
+
+.project-card-dark .project-tag:hover {
+  color: $textColorDark;
 }
 
 @media (max-width: 768px) {
-  .project-subtitle {
-    font-size: 16px;
-    text-align: center;
+  .projects-section {
+    gap: 2.5rem;
   }
 }

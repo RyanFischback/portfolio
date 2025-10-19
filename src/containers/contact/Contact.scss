@@ -1,87 +1,118 @@
 @import "../../_globalColor";
 
-.contact-div-main {
+.contact-section {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  padding: clamp(4.5rem, 9vw, 6.5rem) 0;
   display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4rem);
 }
 
-.dark-mode a {
-  color: $textColorDark;
+.contact-header {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.contact-div-main > * {
-  flex: 1;
+.contact-div-main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
 }
 
-.contact-title {
-  font-size: 65px;
-  font-weight: 400;
+.contact-text-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: clamp(26px, 5vw, 32px);
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  box-shadow: 0 38px 60px -45px rgba(15, 23, 42, 0.45);
+  padding: clamp(1.8rem, 4vw, 2.6rem);
 }
 
 .contact-detail,
 .contact-detail-email {
-  margin-top: 20px;
-  font-size: 40px;
-  font-weight: 400;
-  color: $subTitle;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: $buttonColor;
   text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .contact-detail:hover,
 .contact-detail-email:hover {
   color: $textColor;
-  text-shadow: 2px 1px 2px $contactDetailHoverTS;
-  transition: all 0.3s;
+  text-shadow: 0 10px 30px rgba(124, 92, 255, 0.35);
 }
 
 .contact-subtitle {
   text-transform: uppercase;
+  letter-spacing: 0.18em;
 }
 
-.contact-text-div {
-  margin-top: 1.5rem;
+.contact-image-div {
+  display: flex;
+  justify-content: center;
 }
 
-.contact-margin-top {
-  margin-top: 4rem;
+.contact-visual {
+  width: min(440px, 100%);
+  padding: clamp(1.8rem, 4vw, 3rem);
+  border-radius: clamp(36px, 6vw, 48px);
+  background: linear-gradient(150deg, rgba(124, 92, 255, 0.18), rgba(54, 197, 240, 0.12));
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  box-shadow: 0 45px 80px -55px rgba(15, 23, 42, 0.55);
 }
 
-.contact-image-div > img {
-  max-width: 100%;
+.contact-visual canvas,
+.contact-visual img {
+  width: 100%;
   height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
 }
 
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
-  .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
-  }
+.dark-mode .contact-text-div {
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(124, 92, 255, 0.28);
+  box-shadow: 0 45px 80px -55px rgba(124, 92, 255, 0.6);
+}
 
-  .contact-title {
-    font-size: 40px;
-    text-align: center;
-  }
+.dark-mode .contact-detail,
+.dark-mode .contact-detail-email {
+  color: $textColorDark;
+}
 
-  .contact-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
+.dark-mode .contact-detail:hover,
+.dark-mode .contact-detail-email:hover {
+  color: $buttonHover;
+}
+
+.dark-mode .contact-visual {
+  background: linear-gradient(150deg, rgba(124, 92, 255, 0.28), rgba(54, 197, 240, 0.18));
+  border-color: rgba(124, 92, 255, 0.3);
+  box-shadow: 0 55px 90px -60px rgba(124, 92, 255, 0.65);
+}
+
+@media (max-width: 1024px) {
+  .contact-div-main {
+    grid-template-columns: 1fr;
   }
 
   .contact-text-div {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-text-div {
     text-align: center;
-    margin-top: 1.5rem;
+    align-items: center;
   }
 
-  .contact-detail,
-  .contact-detail-email {
-    font-size: 20px;
-  }
-
-  .contact-image-div {
-    display: none;
+  .contact-section {
+    gap: 2.5rem;
   }
 }

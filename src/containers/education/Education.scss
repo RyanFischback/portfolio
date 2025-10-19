@@ -1,50 +1,48 @@
-.education-heading {
-  font-size: 56px;
-  font-weight: 400;
-}
+@import "../../_globalColor";
 
 .education-section {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 6rem) 0;
   display: flex;
   flex-direction: column;
-  width: 90%;
-  padding: 20px 0px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  gap: clamp(2rem, 5vw, 3rem);
 }
 
-.education-section > * {
-  flex: 1;
-  margin-bottom: 30px;
+.education-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.education-heading {
+  margin: 0;
 }
 
 .education-card-container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
+  position: relative;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding-left: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-@media (max-width: 1380px) {
-  .education-card-container {
-    padding-top: 0px;
-  }
-  .education-heading {
-    font-size: 40px;
-  }
-  .education-text-subtitle {
-    font-size: 18px;
-    text-align: center;
-  }
+.education-card-container::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 0.7rem;
+  bottom: 1rem;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(124, 92, 255, 0.4), rgba(54, 197, 240, 0.35));
+  border-radius: 999px;
 }
 
 @media (max-width: 768px) {
   .education-card-container {
-    padding-top: 0px;
+    padding-left: 1rem;
   }
-  .education-heading {
-    font-size: 30px;
-    text-align: center;
-  }
-  .education-text-subtitle {
-    font-size: 16px;
+
+  .education-card-container::before {
+    left: 0.4rem;
   }
 }

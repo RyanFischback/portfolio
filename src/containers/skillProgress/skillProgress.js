@@ -11,14 +11,18 @@ export default function StackProgress() {
       <Fade bottom duration={1000} distance="20px">
         <div className="skills-container">
           <div className="skills-bar">
-            <h1 className="skills-heading">Proficiency</h1>
+            <span className="section-stage">Chapter 05 · Skills</span>
+            <h1 className="section-heading">Proficiency</h1>
             {techStack.experience.map((exp, i) => {
               const progressStyle = {
                 width: exp.progressPercentage
               };
               return (
                 <div key={i} className="skill">
-                  <p>{exp.Stack}</p>
+                  <div className="skill-header">
+                    <p className="skill-title">{exp.Stack}</p>
+                    <span className="skill-value">{exp.progressPercentage}</span>
+                  </div>
                   <div className="meter">
                     <span style={progressStyle}></span>
                   </div>
@@ -28,14 +32,16 @@ export default function StackProgress() {
           </div>
 
           <div className="skills-image">
-            {illustration.animated ? (
-              <DisplayLottie animationData={Build} />
-            ) : (
-              <img
-                alt="Skills"
-                src={require("../../assets/images/skill.svg")}
-              />
-            )}
+            <div className="skills-progress-visual">
+              {illustration.animated ? (
+                <DisplayLottie animationData={Build} />
+              ) : (
+                <img
+                  alt="Skills"
+                  src={require("../../assets/images/skill.svg")}
+                />
+              )}
+            </div>
           </div>
         </div>
       </Fade>

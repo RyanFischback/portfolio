@@ -3,7 +3,7 @@ import {Fade, Slide} from "react-reveal";
 import "./EducationCard.scss";
 import StyleContext from "../../contexts/StyleContext";
 
-export default function EducationCard({school}) {
+export default function EducationCard({school, index = 0}) {
   const imgRef = createRef();
 
   const GetDescBullets = ({descBullets}) => {
@@ -20,9 +20,9 @@ export default function EducationCard({school}) {
   if (!school.logo)
     console.error(`Image of ${school.name} is missing in education section`);
   return (
-    <div>
+    <div className="education-card-wrapper">
       <Fade left duration={1000}>
-        <div className="education-card">
+        <div className="education-card" data-index={`0${index + 1}`}>
           {school.logo && (
             <div className="education-card-left">
               <img
