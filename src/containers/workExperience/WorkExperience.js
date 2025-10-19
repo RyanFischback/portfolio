@@ -9,16 +9,22 @@ export default function WorkExperience() {
   const {isDark} = useContext(StyleContext);
   if (workExperiences.display) {
     return (
-      <div id="experience">
+      <section id="experience">
         <Fade bottom duration={1000} distance="20px">
-          <div className="experience-container" id="workExperience">
+          <div className="main experience-section" id="workExperience">
             <div>
+              <span className="section-tag">Chapter 03</span>
               <h1 className="experience-heading">Experiences</h1>
+              <p className="experience-subtitle">
+                A timeline of the missions I’ve led, shipped, and scaled.
+              </p>
               <div className="experience-cards-div">
                 {workExperiences.experience.map((card, i) => {
                   return (
                     <ExperienceCard
                       key={i}
+                      index={i}
+                      total={workExperiences.experience.length}
                       isDark={isDark}
                       cardInfo={{
                         company: card.company,
@@ -35,7 +41,7 @@ export default function WorkExperience() {
             </div>
           </div>
         </Fade>
-      </div>
+      </section>
     );
   }
   return null;

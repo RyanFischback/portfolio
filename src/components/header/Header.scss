@@ -5,178 +5,204 @@
   max-height: 100px;
 }
 
-/* header */
-
-.dark-menu {
-  background-color: $darkBackground !important;
-  color: $textColorDark;
-}
-
-.dark-menu li a {
-  color: $textColorDark !important;
-}
-
-.dark-menu li a:hover {
-  background-color: $buttonColor !important;
-}
-
 .header {
-  background-color: $lightBackground1;
-  max-width: 100%;
-  padding: 15px 20px;
-  margin: 0px auto;
+  position: relative;
+  width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 1.2rem clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.dark-menu.header {
+  background: rgba(11, 13, 23, 0.7) !important;
+  box-shadow: 0 26px 70px rgba(2, 6, 23, 0.55);
+  border-color: rgba(124, 58, 237, 0.25);
 }
 
 .header ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.6rem);
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  overflow: hidden;
+}
+
+.header li {
+  position: relative;
+}
+
+.header li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $textColor;
+  text-decoration: none;
+  padding: 0.35rem 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.3s ease;
+}
+
+.header li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, #7c3aed, #38bdf8);
+  transition: transform 0.35s ease;
+}
+
+.header li a:hover::after,
+.header li a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.header li a:hover {
+  color: #111827;
+}
+
+.dark-menu li a {
+  color: rgba(228, 233, 255, 0.85) !important;
+}
+
+.dark-menu li a:hover {
+  color: #fff !important;
+}
+
+.dark-menu li a::after {
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.8), rgba(56, 189, 248, 0.8));
 }
 
 .grey-color {
   color: $subTitle;
 }
 
-.header li a {
-  display: block;
-  padding: 15px 20px;
-  color: $textColor;
-  text-decoration: none;
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-  background-color: $headerHoverBG;
-}
-
 .header .logo {
-  display: block;
-  flex: none;
-  float: left;
-  font-size: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: inherit;
   text-decoration: none;
-  margin-top: 10px;
-  line-height: normal;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .header .logo-name {
   font-family: "Agustina Regular";
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 10px;
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
 }
-
-/* menu */
 
 .header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 1rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.15);
 }
 
-/* menu icon */
+.dark-menu .menu {
+  background: rgba(10, 12, 24, 0.92);
+}
 
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 28px 20px;
-  position: relative;
-  user-select: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.75rem 0;
 }
 
 .header .menu-icon .navicon {
-  background: $iconBackground;
+  position: relative;
+}
+
+.header .menu-icon .navicon,
+.header .menu-icon .navicon::before,
+.header .menu-icon .navicon::after {
+  content: "";
   display: block;
   height: 2px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .navicon-dark {
-  background: $textColorDark;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
+  width: 22px;
   background: $iconBackground;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 999px;
 }
 
-.header .menu-icon .navicon-dark:before,
-.header .menu-icon .navicon-dark:after {
-  background: $textColorDark !important;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
+.header .menu-icon .navicon::before {
+  transform: translateY(-6px);
 }
 
-.header .menu-icon .navicon:before {
-  top: 5px;
+.header .menu-icon .navicon::after {
+  transform: translateY(6px);
 }
 
-.header .menu-icon .navicon:after {
-  top: -5px;
+.header .menu-icon .navicon-dark,
+.header .menu-icon .navicon-dark::before,
+.header .menu-icon .navicon-dark::after {
+  background: rgba(226, 232, 240, 0.9);
 }
-
-/* menu btn */
 
 .header .menu-btn {
   display: none;
 }
 
-.header .menu-btn:checked ~ .menu {
-  max-height: 486px;
+.header .menu-btn:checked + .menu-icon .navicon {
+  background: transparent;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent !important;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
+.header .menu-btn:checked + .menu-icon .navicon::before {
   transform: rotate(45deg);
 }
 
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
+.header .menu-btn:checked + .menu-icon .navicon::after {
+  transform: rotate(-45deg);
 }
 
-/* 48em = 768px */
+.header .menu-btn:checked ~ .menu {
+  display: flex;
+}
 
-@media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
+@media (min-width: 992px) {
   .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-radius: 28px;
   }
   .header .menu {
-    max-height: none;
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
   }
   .header .menu-icon {
     display: none;
   }
 }
-@media (max-width: 960px) and (min-width: 768px) {
+
+@media (max-width: 768px) {
   .header {
-    font-size: 12px;
+    width: calc(100% - 2rem);
   }
 }

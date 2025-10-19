@@ -1,7 +1,40 @@
+@import "../../_globalColor";
+
+.project-showcase {
+  overflow: hidden;
+  text-align: left;
+}
+
+.project-showcase::after {
+  content: "";
+  position: absolute;
+  inset: -25% -20% 40% auto;
+  width: 55%;
+  background: radial-gradient(circle at right top, rgba(56, 189, 248, 0.2), transparent 65%);
+  z-index: -1;
+}
+
+.dark-mode .project-showcase::after {
+  background: radial-gradient(circle at right top, rgba(56, 189, 248, 0.32), transparent 65%);
+}
+
 .project-title {
-  font-size: 52px;
-  font-weight: 400;
-  line-height: normal;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  margin: clamp(1.2rem, 3vw, 1.8rem) 0 0.75rem;
+}
+
+.project-subtitle {
+  max-width: 36rem;
+  line-height: 1.8;
+  color: $subTitle;
+  margin-bottom: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.repo-cards-div-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .startup-project-text img {
@@ -9,24 +42,15 @@
   height: auto;
 }
 
-.repo-cards-div-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem 1rem;
+.dark-mode .project-subtitle {
+  color: rgba(226, 232, 240, 0.75);
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .project-title {
-    font-size: 40px;
-  }
-}
 @media (max-width: 768px) {
-  .project-title {
-    font-size: 30px;
+  .project-showcase {
     text-align: center;
   }
-  .repo-cards-div-main {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  .project-subtitle {
+    max-width: none;
   }
 }

@@ -1,51 +1,113 @@
 @import "../../_globalColor";
 
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
 .greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  width: var(--section-max-width);
+  margin: clamp(3rem, 8vw, 6rem) auto 0;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 243, 255, 0.6));
+  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+}
+
+.greet-main::before,
+.greet-main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.2), transparent 60%),
+    radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.18), transparent 55%);
+  mix-blend-mode: screen;
+  transform: translateY(-10%);
+}
+
+.greet-main::after {
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.dark-panel {
+  background: linear-gradient(140deg, rgba(11, 13, 23, 0.92), rgba(31, 26, 60, 0.6));
+  box-shadow: 0 40px 120px rgba(7, 6, 19, 0.65);
+}
+
+.dark-panel::before,
+.dark-panel::after {
+  background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.35), transparent 60%),
+    radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.25), transparent 55%);
 }
 
 .greeting-main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 6vw, 4rem);
+  position: relative;
+  z-index: 1;
+}
+
+.greeting-text-div {
   display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 3vw, 1.8rem);
 }
 
-.subTitle {
-  color: $subTitle !important;
+.greeting-text {
+  font-family: "Space Grotesk", "Agustina Regular", sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: $titleColor;
 }
 
-.greeting-main {
-  display: flex;
+.dark-mode .greeting-text {
+  color: $textColorDark;
 }
 
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
+.greeting-text span,
+.greeting-text strong {
+  background: linear-gradient(120deg, #7c3aed 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.greeting-text-p {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  line-height: 1.7;
+  max-width: 34rem;
+  color: $subTitle;
+}
+
+.dark-mode .greeting-text-p {
+  color: rgba(226, 232, 240, 0.8) !important;
+}
+
 .button-greeting-div {
   display: flex;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
+
 .download-link-button {
   text-decoration: none;
 }
 
-.greeting-text {
-  font-size: 70px;
-  line-height: 1.1;
-  color: $textColor !important;
+.greeting-image-div {
+  position: relative;
+  isolation: isolate;
 }
 
-.greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
+.greeting-image-div::before {
+  content: "";
+  position: absolute;
+  inset: 10% 5% -15% 5%;
+  background: linear-gradient(200deg, rgba(124, 58, 237, 0.3), rgba(56, 189, 248, 0.12));
+  filter: blur(55px);
+  z-index: -1;
+  opacity: 0.9;
 }
 
 .greeting-image-div > img {
@@ -53,77 +115,60 @@
   height: auto;
 }
 
-.dark-mode .greeting-text,
-.dark-mode .greeting-text-p {
-  color: $textColorDark !important;
-}
-
 .wave-emoji {
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite;
-  animation-name: wave;
   display: inline-block;
+  animation: wave 2.4s ease-in-out infinite;
   transform-origin: 70% 70%;
 }
 
 @keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
+  0%,
   100% {
     transform: rotate(0deg);
   }
+  15% {
+    transform: rotate(16deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  45% {
+    transform: rotate(12deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
-  }
-  .greeting-text-p {
-    font-size: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .button-greeting-div {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .greeting-text {
-    font-size: 30px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
+@media (max-width: 1024px) {
   .greeting-main {
-    display: block;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .greeting-text-div {
+    align-items: center;
+  }
+  .greeting-text-p {
+    max-width: none;
   }
   .greeting-image-div {
-    height: 256px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .button-greeting-div {
+    justify-content: center;
   }
 }
 
-@media (max-width: 320px) {
-  .main {
-    width: auto;
+@media (max-width: 640px) {
+  .greet-main {
+    margin-top: 2rem;
+    padding: clamp(3rem, 10vw, 4rem) clamp(1.2rem, 6vw, 2rem);
+  }
+  .greeting-text {
+    font-size: clamp(2.4rem, 8vw, 3rem);
+  }
+  .greeting-text-p {
+    font-size: 1rem;
   }
 }

@@ -2,6 +2,44 @@
 
 .dark-mode {
   background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+  color: $textColorDark;
+  transition: 0.3s ease;
+}
+
+.main {
+  width: var(--section-max-width);
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  z-index: 1;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 255, 0.4) 100%);
+  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(14px);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.main:hover::before {
+  transform: translateY(-6px);
+  box-shadow: 0 50px 120px rgba(15, 23, 42, 0.18);
+}
+
+.dark-mode .main::before {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.45) 100%);
+  box-shadow: 0 40px 120px rgba(8, 7, 20, 0.65);
+}
+
+.dark-mode .main:hover::before {
+  box-shadow: 0 55px 140px rgba(5, 6, 20, 0.75);
+}
+
+.main + .main {
+  margin-top: clamp(3rem, 8vw, 6rem);
 }

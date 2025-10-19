@@ -13,7 +13,10 @@ export default function Skills() {
     return null;
   }
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
+    <div
+      className={`main skills-section ${isDark ? "dark-mode" : ""}`}
+      id="skills"
+    >
       <div className="skills-main-div">
         <Fade left duration={1000}>
           <div className="skills-image-div">
@@ -29,6 +32,7 @@ export default function Skills() {
         </Fade>
         <Fade right duration={1000}>
           <div className="skills-text-div">
+            <span className="section-tag">Chapter 02</span>
             <h1
               className={isDark ? "dark-mode skills-heading" : "skills-heading"}
             >

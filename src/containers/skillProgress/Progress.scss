@@ -1,70 +1,151 @@
 @import "../../_globalColor";
 
-.meter {
-  height: 20px;
-  position: relative;
-  background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
+.proficiency-section {
+  overflow: hidden;
 }
+
+.proficiency-section::after {
+  content: "";
+  position: absolute;
+  inset: auto -25% -30% -25%;
+  height: 75%;
+  background: radial-gradient(circle at right bottom, rgba(56, 189, 248, 0.2), transparent 60%);
+  z-index: -1;
+}
+
+.dark-mode .proficiency-section::after {
+  background: radial-gradient(circle at right bottom, rgba(56, 189, 248, 0.28), transparent 60%);
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 6vw, 3.5rem);
+  align-items: center;
+}
+
+.skills-bar {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.skills-bar .section-tag {
+  align-self: flex-start;
+}
+
+.skills-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  margin: 0;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: $textColor;
+}
+
+.skill-label strong {
+  font-size: 0.85rem;
+  color: rgba(124, 58, 237, 0.85);
+}
+
+.meter {
+  height: 16px;
+  position: relative;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter::after {
+  content: "";
+  position: absolute;
+  inset: -40% -80% 50% -80%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, transparent 65%);
+  opacity: 0.4;
+}
+
 .meter > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
+  border-radius: inherit;
+  background: $progressBarSpanBG;
+  box-shadow: 0 12px 25px rgba(124, 58, 237, 0.25);
   position: relative;
   overflow: hidden;
 }
-.skill {
-  line-height: 3.5vw;
+
+.meter > span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), transparent 65%);
+  mix-blend-mode: screen;
 }
-.skill-bars {
-  font-size: 28px;
-  width: 40%;
+
+.skills-image {
+  position: relative;
+  padding: clamp(1rem, 4vw, 2rem);
 }
-.skills-container {
-  display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+
+.skills-image::after {
+  content: "";
+  position: absolute;
+  inset: 15% 10% -20% 10%;
+  background: linear-gradient(200deg, rgba(124, 58, 237, 0.22), rgba(56, 189, 248, 0.18));
+  filter: blur(60px);
+  z-index: -1;
 }
-.skills-container > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
+
 .skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
+  max-width: 100%;
   height: auto;
+  filter: drop-shadow(0 24px 40px rgba(15, 23, 42, 0.2));
 }
 
-/* Media Query */
-
-@media (max-width: 1456px) {
-  .skills-bar {
-    line-height: 4rem;
-  }
-  .skills-image {
-    display: none;
-    order: 2;
-  }
+.dark-mode .skill-label {
+  color: rgba(226, 232, 240, 0.9);
 }
 
-@media (max-width: 768px) {
+.dark-mode .skill-label strong {
+  color: rgba(56, 189, 248, 0.9);
+}
+
+.dark-mode .meter {
+  background: rgba(30, 41, 59, 0.65);
+}
+
+.dark-mode .meter > span {
+  box-shadow: 0 18px 35px rgba(56, 189, 248, 0.25);
+}
+
+@media (max-width: 1024px) {
   .skills-container {
-    flex-direction: column;
-  }
-  .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
+    grid-template-columns: 1fr;
   }
   .skills-image {
-    display: none;
-    order: 2;
+    order: -1;
+  }
+  .skills-image::after {
+    inset: 5% 0% -30% 0%;
+  }
+}
+
+@media (max-width: 640px) {
+  .skill-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 }
