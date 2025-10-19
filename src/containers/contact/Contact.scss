@@ -1,87 +1,127 @@
 @import "../../_globalColor";
 
+.contact-margin-top {
+  position: relative;
+  overflow: hidden;
+}
+
 .contact-div-main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.contact-header {
   display: flex;
-}
-
-.dark-mode a {
-  color: $textColorDark;
-}
-
-.contact-div-main > * {
-  flex: 1;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .contact-title {
-  font-size: 65px;
-  font-weight: 400;
+  font-size: clamp(2.6rem, 4vw, 3.4rem);
+  font-weight: 600;
+  margin: 0;
+  color: $titleColor;
+}
+
+.contact-subtitle {
+  margin: 0;
+  font-size: 1.05rem;
+  color: rgba(30, 41, 59, 0.68);
+  line-height: 1.7;
+}
+
+.contact-text-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .contact-detail,
 .contact-detail-email {
-  margin-top: 20px;
-  font-size: 40px;
-  font-weight: 400;
-  color: $subTitle;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: rgba(15, 23, 42, 0.85);
   text-decoration: none;
+  transition: color 200ms ease;
 }
 
 .contact-detail:hover,
 .contact-detail-email:hover {
-  color: $textColor;
-  text-shadow: 2px 1px 2px $contactDetailHoverTS;
-  transition: all 0.3s;
+  color: $buttonColor;
 }
 
-.contact-subtitle {
-  text-transform: uppercase;
+.contact-image-div {
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
-.contact-text-div {
-  margin-top: 1.5rem;
+.contact-image-div img,
+.contact-image-div > div {
+  width: min(420px, 100%);
 }
 
-.contact-margin-top {
-  margin-top: 4rem;
+.contact-image-div::before {
+  content: "";
+  position: absolute;
+  inset: 12% 12% 12% 12%;
+  border-radius: 32px;
+  background: linear-gradient(150deg, rgba(56, 189, 248, 0.18), rgba(124, 58, 237, 0.18));
+  z-index: 0;
+  animation: breathe 9s ease-in-out infinite;
 }
 
-.contact-image-div > img {
-  max-width: 100%;
-  height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
+.contact-image-div > * {
+  position: relative;
+  z-index: 1;
 }
 
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
-  .contact-title {
-    font-size: 56px;
-    font-weight: 400;
+.dark-mode .contact-title,
+.dark-mode .contact-subtitle,
+.dark-mode .contact-detail,
+.dark-mode .contact-detail-email {
+  color: $textColorDark;
+}
+
+.dark-mode .contact-detail:hover,
+.dark-mode .contact-detail-email:hover {
+  color: #38bdf8;
+}
+
+.dark-mode .contact-image-div::before {
+  background: linear-gradient(150deg, rgba(56, 189, 248, 0.28), rgba(124, 58, 237, 0.32));
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-div-main {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .contact-title {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .contact-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
+  .contact-header {
+    align-items: center;
   }
 
   .contact-text-div {
-    text-align: center;
-    margin-top: 1.5rem;
+    align-items: center;
   }
 
-  .contact-detail,
-  .contact-detail-email {
-    font-size: 20px;
-  }
-
-  .contact-image-div {
-    display: none;
+  .contact-image-div::before {
+    inset: 8% 8% 8% 8%;
   }
 }

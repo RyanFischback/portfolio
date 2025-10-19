@@ -1,70 +1,159 @@
 @import "../../_globalColor";
 
-.meter {
-  height: 20px;
-  position: relative;
-  background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
-}
-.meter > span {
-  display: block;
-  height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
+.proficiency-section {
   position: relative;
   overflow: hidden;
 }
-.skill {
-  line-height: 3.5vw;
-}
-.skill-bars {
-  font-size: 28px;
-  width: 40%;
-}
+
 .skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.skills-bar {
   display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-.skills-container > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
-  height: auto;
+  flex-direction: column;
+  gap: 1.75rem;
 }
 
-/* Media Query */
+.skills-progress-subtitle {
+  color: rgba(30, 41, 59, 0.65);
+  margin: 0;
+  max-width: 32ch;
+}
 
-@media (max-width: 1456px) {
-  .skills-bar {
-    line-height: 4rem;
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.95rem;
+  color: rgba(30, 41, 59, 0.75);
+}
+
+.skill-name {
+  font-weight: 600;
+}
+
+.skill-value {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  color: rgba(99, 102, 241, 0.8);
+}
+
+.meter {
+  position: relative;
+  height: 14px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: $progressBarSpanBG;
+  position: relative;
+  overflow: visible;
+}
+
+.meter-glow {
+  position: absolute;
+  inset: -40% -10%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.45), transparent 60%);
+  opacity: 0.4;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.skills-image {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.skills-image > img,
+.skills-image > div {
+  width: min(360px, 100%);
+}
+
+.progress-visual {
+  position: absolute;
+  inset: 12% 12% 12% 12%;
+  border-radius: 32px;
+  background: linear-gradient(140deg, rgba(56, 189, 248, 0.18), rgba(129, 140, 248, 0.2));
+  filter: blur(0px);
+  animation: rotateGlow 18s infinite linear;
+}
+
+.dark-mode .skills-progress-subtitle,
+.dark-mode .skill-label {
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.dark-mode .skill-value {
+  color: rgba(165, 180, 252, 0.9);
+}
+
+.dark-mode .meter {
+  background: rgba(30, 41, 59, 0.55);
+}
+
+.dark-mode .meter-glow {
+  background: radial-gradient(circle, rgba(226, 232, 240, 0.5), transparent 60%);
+}
+
+.dark-mode .progress-visual {
+  background: linear-gradient(140deg, rgba(56, 189, 248, 0.26), rgba(124, 58, 237, 0.28));
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    transform: translateX(-10%);
+    opacity: 0.45;
   }
-  .skills-image {
-    display: none;
-    order: 2;
+  50% {
+    transform: translateX(10%);
+    opacity: 0.85;
   }
 }
 
-@media (max-width: 768px) {
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
   .skills-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
-  .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
-  }
+
   .skills-image {
-    display: none;
     order: 2;
+  }
+
+  .skills-bar {
+    text-align: center;
+  }
+
+  .skills-progress-subtitle {
+    margin: 0 auto;
+  }
+
+  .skill-label {
+    justify-content: center;
+    gap: 1rem;
   }
 }

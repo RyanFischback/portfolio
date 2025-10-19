@@ -1,28 +1,129 @@
-@import "./globalColor";
+@import "./_globalColor";
+
+%section-surface {
+  width: min(var(--page-max-width), calc(100% - var(--page-padding) * 2));
+  margin: var(--section-gap) auto;
+  padding: clamp(2.75rem, 5vw, 4.5rem);
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  backdrop-filter: blur(26px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 480ms var(--transition-snappy),
+    box-shadow 480ms var(--transition-snappy);
+}
+
+%section-surface::before {
+  content: "";
+  position: absolute;
+  inset: -40% -40% auto auto;
+  width: clamp(220px, 32vw, 340px);
+  height: clamp(220px, 32vw, 340px);
+  background: radial-gradient(circle at center, rgba(124, 58, 237, 0.18) 0%, rgba(56, 189, 248, 0) 70%);
+  filter: blur(0px);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+%section-surface::after {
+  content: "";
+  position: absolute;
+  inset: auto auto -35% -35%;
+  width: clamp(240px, 35vw, 420px);
+  height: clamp(240px, 35vw, 420px);
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.16) 0%, rgba(129, 140, 248, 0) 70%);
+  pointer-events: none;
+}
+
+.section-surface {
+  @extend %section-surface;
+}
+
+.section-surface:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 60px 120px rgba(15, 23, 42, 0.24);
+}
 
 .App {
-  text-align: center;
   width: 100%;
   overflow-x: hidden;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: $appHeaderBG;
+  position: relative;
+  color: $textColor;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(0.625rem + 2vmin);
-  color: $textColorDark;
+  isolation: isolate;
 }
 
-.App-link {
-  color: $appLink;
+.App::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 12% 24%, rgba(124, 58, 237, 0.08) 0%, rgba(15, 23, 42, 0) 60%),
+    radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.08) 0%, rgba(15, 23, 42, 0) 60%);
+  pointer-events: none;
+}
+
+.main,
+.skills-container,
+.education-section,
+.experience-container,
+.tw-main-div,
+#contact.main,
+#opensource.main,
+#projects.main,
+#blogs.main,
+#talks.main,
+#achievements.main,
+#podcast.main,
+#github.main {
+  @extend %section-surface;
+}
+
+.main:hover,
+.skills-container:hover,
+.education-section:hover,
+.experience-container:hover,
+.tw-main-div:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 60px 120px rgba(15, 23, 42, 0.24);
+}
+
+.dark-mode {
+  background: $darkBackground;
+  color: $textColorDark;
+  transition: background 400ms ease, color 200ms ease;
+}
+
+.dark-mode .section-surface,
+.dark-mode .main,
+.dark-mode .skills-container,
+.dark-mode .education-section,
+.dark-mode .experience-container,
+.dark-mode .tw-main-div {
+  background: rgba(15, 23, 42, 0.74);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+}
+
+.dark-mode .section-surface::before,
+.dark-mode .main::before,
+.dark-mode .skills-container::before,
+.dark-mode .education-section::before,
+.dark-mode .experience-container::before,
+.dark-mode .tw-main-div::before {
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.25) 0%, rgba(124, 58, 237, 0) 70%);
+}
+
+.dark-mode .section-surface::after,
+.dark-mode .main::after,
+.dark-mode .skills-container::after,
+.dark-mode .education-section::after,
+.dark-mode .experience-container::after,
+.dark-mode .tw-main-div::after {
+  background: radial-gradient(circle at center, rgba(129, 140, 248, 0.22) 0%, rgba(56, 189, 248, 0) 70%);
 }
 
 .subTitle {

@@ -1,105 +1,134 @@
 @import "../../_globalColor";
 
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; // keeps proportions, no weird stretching
-}
-
-.card-title {
+#projects .skills-heading {
   color: $titleColor;
-  font-size: 20px;
-  line-height: 1.4;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
+  font-weight: 600;
+  margin: 0 0 1rem;
 }
 
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 15px;
-  line-height: 1.5rem;
-  flex-grow: 1;
-  margin-bottom: 1rem;
+.project-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(30, 41, 59, 0.55);
+}
+
+.projects-container {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  justify-content: flex-start;
-  align-items: stretch;
-  min-height: 420px; // ensures equal card heights
+  gap: 1.25rem;
+  padding: 1.8rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 32px 70px rgba(15, 23, 42, 0.18);
+  transition: transform 260ms ease, box-shadow 260ms ease;
 }
 
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  transition: all 0.3s ease;
-}
-.project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: -30% auto auto -30%;
+  width: clamp(200px, 28vw, 280px);
+  height: clamp(200px, 28vw, 280px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18), transparent 70%);
+  pointer-events: none;
 }
 
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  transition: all 0.25s ease;
-}
-.project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 55px 110px rgba(15, 23, 42, 0.24);
 }
 
 .project-image {
-  height: 240px; // fixed image block height for uniformity
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  background: rgba(226, 232, 240, 0.4);
+  display: grid;
+  place-items: center;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
 }
 
-.project-detail {
-  flex: 1; // fill remaining height
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center; // consistent across all cards
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $titleColor;
+}
+
+.card-subtitle {
+  margin: 0;
+  color: rgba(30, 41, 59, 0.65);
+  line-height: 1.6;
 }
 
 .project-card-footer {
   margin-top: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+  gap: 0.65rem;
 }
 
-.project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  border-radius: 4px;
+.project-tag {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(56, 189, 248, 0.2));
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  color: rgba(30, 41, 59, 0.7);
   font-size: 0.75rem;
-  height: 2em;
-  white-space: nowrap;
-  line-height: 1.5;
-  padding: 0 0.75em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+.project-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.25);
 }
 
-@media (max-width: 768px) {
-  .project-subtitle {
-    font-size: 16px;
-    text-align: center;
-  }
+#projects.dark-mode .skills-heading {
+  color: $textColorDark;
+}
+
+#projects.dark-mode .project-subtitle {
+  color: rgba(226, 232, 240, 0.55);
+}
+
+#projects.dark-mode .project-card {
+  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba(129, 140, 248, 0.35);
+  box-shadow: 0 45px 95px rgba(2, 6, 23, 0.65);
+}
+
+#projects.dark-mode .card-title,
+#projects.dark-mode .card-subtitle {
+  color: $textColorDark;
+}
+
+#projects.dark-mode .project-tag {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.32), rgba(56, 189, 248, 0.28));
+  border-color: rgba(165, 180, 252, 0.4);
+  color: rgba(226, 232, 240, 0.9);
 }

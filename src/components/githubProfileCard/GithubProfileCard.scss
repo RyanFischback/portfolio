@@ -1,105 +1,99 @@
 @import "../../_globalColor";
 
-.profile-image {
-  border-radius: 50%;
-  border: 0.5rem solid $githubProfileCardBorder;
-  margin-left: auto;
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  box-shadow: $lightBoxShadow 0 30px 30px -30px;
-  transition: all 0.3s ease-out;
-}
-
-.profile-image:hover {
-  box-shadow: none;
+.main#contact {
+  position: relative;
+  overflow: hidden;
 }
 
 .prof-title {
-  margin: 0;
-  font-size: 40px;
-  font-weight: 400;
-}
-
-.location-div {
-  text-shadow: $githubProfileCardLocationTS;
-}
-
-.opp-div {
-  padding-bottom: 1rem;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  color: $titleColor;
 }
 
 .row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
 }
 
 .main-content-profile {
-  flex: 80%;
-}
-
-.image-content-profile {
-  text-align: right;
-  flex: 20%;
-  max-width: 100%;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .bio-text {
-  line-height: 30px;
-  font-size: 22px;
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: rgba(30, 41, 59, 0.8);
 }
 
 .desc-prof {
-  line-height: 45px;
-  font-size: 19px;
+  font-size: 1rem;
+  color: rgba(30, 41, 59, 0.65);
 }
 
-.subTitle {
-  color: $subTitle;
+.location-div svg {
+  margin-right: 0.4rem;
 }
 
-@media (max-width: 768px) {
+.image-content-profile {
+  display: grid;
+  place-items: center;
+}
+
+.profile-image {
+  width: min(300px, 100%);
+  border-radius: 28px;
+  border: 8px solid rgba(124, 58, 237, 0.25);
+  box-shadow: 0 40px 90px rgba(15, 23, 42, 0.2);
+  transition: transform 260ms ease;
+}
+
+.profile-image:hover {
+  transform: translateY(-6px);
+}
+
+.opp-div {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(99, 102, 241, 0.75);
+}
+
+.dark-mode .prof-title {
+  color: $textColorDark;
+}
+
+.dark-mode .bio-text,
+.dark-mode .desc-prof {
+  color: $textColorDark;
+}
+
+.dark-mode .opp-div {
+  color: rgba(165, 180, 252, 0.85);
+}
+
+.dark-mode .profile-image {
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: 0 45px 110px rgba(2, 6, 23, 0.65);
+}
+
+@media (max-width: 900px) {
   .row {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .main-content-profile {
-    text-align: center;
-    order: 2;
-  }
-
-  .bio-text {
-    font-size: 16px;
-  }
-
-  .image-content-profile {
-    margin-left: auto;
-    margin-right: auto;
-    order: 1;
-  }
-
-  .desc-prof {
-    line-height: 30px;
-    font-size: 16px;
+    align-items: center;
   }
 
   .profile-image {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-  }
-
-  .profile-image:hover {
-    box-shadow: $lightBoxShadow 0 50px 50px -50px;
-    transition: 0.3s ease-out;
-  }
-
-  .prof-title {
-    padding-bottom: 1rem;
-    font-size: 32px;
-    text-align: center;
+    width: min(240px, 100%);
   }
 }

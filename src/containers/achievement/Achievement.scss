@@ -1,34 +1,37 @@
 @import "../../_globalColor";
 
-.achievement-heading {
-  font-size: 56px;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px;
-}
-.achievement-subtitle {
-  text-transform: uppercase;
-  margin: 0px;
-  margin-bottom: 50px;
-}
-.subTitle {
-  color: $subTitle;
+.achievement-main-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .achievement-heading {
-    font-size: 40px;
-  }
+.achievement-heading {
+  font-size: clamp(2.4rem, 4vw, 3.3rem);
+  font-weight: 600;
+  margin: 0;
+  color: $titleColor;
 }
-@media (max-width: 768px) {
-  .achievement-heading {
-    font-size: 30px;
-    text-align: center;
-  }
-  .achievement-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
+
+.achievement-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(30, 41, 59, 0.55);
+}
+
+.achievement-cards-div {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.dark-mode .achievement-heading {
+  color: $textColorDark;
+}
+
+.dark-mode .achievement-subtitle {
+  color: rgba(226, 232, 240, 0.55);
 }

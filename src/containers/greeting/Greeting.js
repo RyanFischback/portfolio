@@ -16,15 +16,16 @@ export default function Greeting() {
   }
   return (
     <Fade bottom duration={1000} distance="40px">
-      <div className="greet-main" id="greeting">
+      <div className="greet-main hero-section" id="greeting">
+        <div className="hero-orbit" aria-hidden="true" />
         <div className="greeting-main">
           <div className="greeting-text-div">
-            <div>
+            <div className="hero-copy">
+              <p className="hero-kicker">{emoji("🚀")}&nbsp;Featured Engineer</p>
               <h1
                 className={isDark ? "dark-mode greeting-text" : "greeting-text"}
               >
-                {" "}
-                {greeting.title}{" "}
+                <span className="hero-highlight">{greeting.title}</span>
                 <span className="wave-emoji">{emoji("👋")}</span>
               </h1>
               <p
@@ -36,7 +37,9 @@ export default function Greeting() {
               >
                 {greeting.subTitle}
               </p>
-              <SocialMedia />
+              <div className="hero-social">
+                <SocialMedia />
+              </div>
               <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
@@ -51,14 +54,17 @@ export default function Greeting() {
             </div>
           </div>
           <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
-            )}
+            <div className="hero-visual">
+              <div className="hero-gradient" aria-hidden="true" />
+              {illustration.animated ? (
+                <DisplayLottie animationData={landingPerson} />
+              ) : (
+                <img
+                  alt="man sitting on table"
+                  src={require("../../assets/images/manOnTable.svg")}
+                ></img>
+              )}
+            </div>
           </div>
         </div>
       </div>

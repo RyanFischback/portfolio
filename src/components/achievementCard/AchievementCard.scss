@@ -1,77 +1,95 @@
 @import "../../_globalColor";
 
-.card-image {
-  max-width: 100%;
-  height: auto;
-  width: 250px;
-}
-.card-title {
-  color: $titleColor;
-  font-size: 1.375rem;
-  line-height: 24px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
-}
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 1.063rem;
-  line-height: 1.5rem;
-}
 .certificate-card {
-  background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.certificate-detail-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.8rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.16);
+  transition: transform 240ms ease, box-shadow 240ms ease;
   text-align: center;
 }
+
 .certificate-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-6px);
+  box-shadow: 0 45px 90px rgba(15, 23, 42, 0.22);
 }
-.dark-mode.certificate-card:hover {
-  box-shadow: $achievementCertificateCardHoverDark 0px 20px 30px -10px;
-}
+
 .certificate-image-div {
-  position: relative;
-  height: 250px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.achievement-cards-div {
+  background: rgba(226, 232, 240, 0.4);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+  place-items: center;
 }
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $titleColor;
+}
+
+.card-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(30, 41, 59, 0.65);
+  line-height: 1.6;
+}
+
 .certificate-card-footer {
+  margin-top: 1rem;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 0.6rem;
 }
-.certificate-card-footer span.certificate-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 4px;
+
+.certificate-tag {
   display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(56, 189, 248, 0.18));
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  color: rgba(30, 41, 59, 0.75);
   font-size: 0.75rem;
-  height: 2em;
-  justify-content: center;
-  white-space: nowrap;
-  line-height: 1.5;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.75em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
-span.certificate-tag:hover {
-  background: $buttonHover;
+
+.certificate-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.25);
+}
+
+.dark-mode .certificate-card {
+  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba(129, 140, 248, 0.4);
+  box-shadow: 0 38px 90px rgba(2, 6, 23, 0.65);
+}
+
+.dark-mode .card-title,
+.dark-mode .card-subtitle {
+  color: $textColorDark;
+}
+
+.dark-mode .certificate-tag {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.28), rgba(56, 189, 248, 0.24));
+  color: rgba(226, 232, 240, 0.85);
+  border-color: rgba(165, 180, 252, 0.4);
 }

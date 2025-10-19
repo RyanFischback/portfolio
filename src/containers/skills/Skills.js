@@ -13,10 +13,11 @@ export default function Skills() {
     return null;
   }
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
+    <div className={isDark ? "dark-mode main skills-section" : "main skills-section"} id="skills">
       <div className="skills-main-div">
         <Fade left duration={1000}>
           <div className="skills-image-div">
+            <div className="skills-visual" aria-hidden="true" />
             {illustration.animated ? (
               <DisplayLottie animationData={codingPerson} />
             ) : (
@@ -43,20 +44,23 @@ export default function Skills() {
             >
               {skillsSection.subTitle}
             </p>
-            <SoftwareSkill />
-            <div>
+            <div className="skills-chip-grid">
+              <SoftwareSkill />
+            </div>
+            <div className="skills-story">
               {skillsSection.skills.map((skills, i) => {
                 return (
-                  <p
+                  <div
                     key={i}
                     className={
                       isDark
-                        ? "dark-mode subTitle skills-text"
-                        : "subTitle skills-text"
+                        ? "skills-story-item dark-mode"
+                        : "skills-story-item"
                     }
                   >
-                    {skills}
-                  </p>
+                    <span className="skills-story-index">{String(i + 1).padStart(2, "0")}</span>
+                    <p className="skills-text">{skills}</p>
+                  </div>
                 );
               })}
             </div>

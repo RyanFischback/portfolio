@@ -9,18 +9,26 @@ export default function StackProgress() {
   if (techStack.viewSkillBars) {
     return (
       <Fade bottom duration={1000} distance="20px">
-        <div className="skills-container">
+        <div className="skills-container proficiency-section">
           <div className="skills-bar">
             <h1 className="skills-heading">Proficiency</h1>
+            <p className="skills-progress-subtitle">
+              A quick snapshot of where I devote most of my craft.
+            </p>
             {techStack.experience.map((exp, i) => {
               const progressStyle = {
                 width: exp.progressPercentage
               };
               return (
                 <div key={i} className="skill">
-                  <p>{exp.Stack}</p>
+                  <div className="skill-label">
+                    <span className="skill-name">{exp.Stack}</span>
+                    <span className="skill-value">{exp.progressPercentage}</span>
+                  </div>
                   <div className="meter">
-                    <span style={progressStyle}></span>
+                    <span style={progressStyle}>
+                      <span className="meter-glow" />
+                    </span>
                   </div>
                 </div>
               );
@@ -28,6 +36,7 @@ export default function StackProgress() {
           </div>
 
           <div className="skills-image">
+            <div className="progress-visual" aria-hidden="true" />
             {illustration.animated ? (
               <DisplayLottie animationData={Build} />
             ) : (
