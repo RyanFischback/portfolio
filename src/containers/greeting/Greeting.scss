@@ -1,68 +1,90 @@
 @import "../../_globalColor";
 
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
 .greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  position: relative;
 }
 
 .greeting-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
 }
 
-.subTitle {
-  color: $subTitle !important;
+.greeting-text-div {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 26px;
+  padding: clamp(2rem, 5vw, 3.25rem);
+  box-shadow: var(--surface-shadow);
+  backdrop-filter: blur(18px);
+  transform: translateZ(0);
+  animation: fadeUp 0.7s ease both;
 }
 
-.greeting-main {
-  display: flex;
+.greeting-text {
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
 }
 
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
+.greeting-text-p {
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--text-secondary) !important;
 }
+
 .button-greeting-div {
   display: flex;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
 }
+
 .download-link-button {
   text-decoration: none;
 }
 
-.greeting-text {
-  font-size: 70px;
-  line-height: 1.1;
-  color: $textColor !important;
+.social-media-div {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
 }
 
-.greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
+.greeting-image-div {
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
-.greeting-image-div > img {
+.greeting-image-div::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.35), rgba(34, 211, 238, 0.25));
+  filter: blur(40px);
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.greeting-image-div > * {
+  width: min(420px, 100%);
   max-width: 100%;
-  height: auto;
+  position: relative;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
 }
 
 .dark-mode .greeting-text,
 .dark-mode .greeting-text-p {
-  color: $textColorDark !important;
+  color: var(--text-primary) !important;
 }
 
 .wave-emoji {
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite;
-  animation-name: wave;
   display: inline-block;
+  animation: wave 1.8s infinite;
   transform-origin: 70% 70%;
 }
 
@@ -70,60 +92,58 @@
   0% {
     transform: rotate(0deg);
   }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
+  15% {
+    transform: rotate(-12deg);
   }
   30% {
+    transform: rotate(14deg);
+  }
+  45% {
     transform: rotate(-10deg);
   }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
+  60% {
+    transform: rotate(8deg);
   }
   100% {
     transform: rotate(0deg);
   }
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  .greeting-text-p {
-    font-size: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .button-greeting-div {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .greeting-text {
-    font-size: 30px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
-  .greeting-main {
-    display: block;
-  }
-  .greeting-image-div {
-    height: 256px;
+  50% {
+    transform: translateY(-18px);
   }
 }
 
-@media (max-width: 320px) {
-  .main {
-    width: auto;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .greeting-text-div {
+    text-align: center;
+  }
+
+  .greeting-text-p {
+    text-align: center;
+  }
+
+  .button-greeting-div {
+    justify-content: center;
+  }
+
+  .greeting-image-div::before {
+    inset: 14%;
   }
 }

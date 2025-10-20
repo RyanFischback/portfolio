@@ -1,70 +1,85 @@
 @import "../../_globalColor";
 
-.meter {
-  height: 20px;
-  position: relative;
-  background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
 }
+
+.skills-bar {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 26px;
+  padding: clamp(2rem, 5vw, 3rem);
+  box-shadow: var(--surface-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.skill {
+  margin-bottom: 1.65rem;
+}
+
+.skill p {
+  margin: 0 0 0.8rem 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.meter {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  background: $progressBarBackground;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
 .meter > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
+  background: $progressBarSpanBG;
+  border-radius: inherit;
   position: relative;
-  overflow: hidden;
-}
-.skill {
-  line-height: 3.5vw;
-}
-.skill-bars {
-  font-size: 28px;
-  width: 40%;
-}
-.skills-container {
-  display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-.skills-container > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
-  height: auto;
+  box-shadow: 0 12px 20px -14px rgba(124, 58, 237, 0.9);
+  transition: width 1.2s ease;
 }
 
-/* Media Query */
+.skills-image {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
 
-@media (max-width: 1456px) {
-  .skills-bar {
-    line-height: 4rem;
+.skills-image::before {
+  content: "";
+  position: absolute;
+  inset: 15%;
+  border-radius: 38px;
+  background: linear-gradient(140deg, rgba(124, 58, 237, 0.3), rgba(34, 211, 238, 0.35));
+  filter: blur(40px);
+  opacity: 0.75;
+}
+
+.skills-image > * {
+  position: relative;
+  width: min(380px, 100%);
+  z-index: 1;
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  .skills-image {
-    display: none;
-    order: 2;
+  50% {
+    transform: translateY(-16px);
   }
 }
 
 @media (max-width: 768px) {
-  .skills-container {
-    flex-direction: column;
-  }
   .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
-  }
-  .skills-image {
-    display: none;
-    order: 2;
+    text-align: center;
   }
 }

@@ -24,6 +24,8 @@ export default function Talks() {
           >
             {talkSection.subtitle}
           </p>
+        </div>
+        <div className="talk-cards-div">
           {talkSection.talks.map((talk, i) => {
             return (
               <TalkCard

@@ -1,105 +1,97 @@
 @import "../../_globalColor";
 
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; // keeps proportions, no weird stretching
-}
-
-.card-title {
-  color: $titleColor;
-  font-size: 20px;
-  line-height: 1.4;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
-}
-
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 15px;
-  line-height: 1.5rem;
-  flex-grow: 1;
-  margin-bottom: 1rem;
-}
-
-.project-card {
-  display: flex;
-  flex-direction: column;
-  background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  justify-content: flex-start;
-  align-items: stretch;
-  min-height: 420px; // ensures equal card heights
-}
-
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  transition: all 0.3s ease;
-}
-.project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  transition: all 0.25s ease;
-}
-.project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
-}
-
-.project-image {
-  height: 240px; // fixed image block height for uniformity
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.project-detail {
-  flex: 1; // fill remaining height
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center; // consistent across all cards
-}
-
-.project-card-footer {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  height: 2em;
-  white-space: nowrap;
-  line-height: 1.5;
-  padding: 0 0.75em;
-  cursor: pointer;
-  transition: 0.2s ease-in;
+.project-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary) !important;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.project-card {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 24px;
+  padding: clamp(1.8rem, 4vw, 2.4rem);
+  box-shadow: var(--surface-shadow);
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px -45px rgba(124, 58, 237, 0.6);
+}
+
+.project-image {
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(124, 58, 237, 0.12);
+  padding: 1.5rem;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.project-detail {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+}
+
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.14);
+  color: #7c3aed;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.project-tag:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(120deg, #7c3aed, #22d3ee);
+  color: #f8fafc;
 }
 
 @media (max-width: 768px) {
   .project-subtitle {
-    font-size: 16px;
     text-align: center;
   }
 }

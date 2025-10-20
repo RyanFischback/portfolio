@@ -1,64 +1,66 @@
 @import "../../_globalColor";
 
 .skills-main-div {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(2.2rem, 6vw, 4rem);
+  align-items: center;
 }
 
 .skills-text-div {
-  margin-left: 50px;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 26px;
+  padding: clamp(2rem, 5vw, 3rem);
+  box-shadow: var(--surface-shadow);
+  backdrop-filter: blur(18px);
 }
 
-.skills-main-div > * {
-  flex: 1;
-  margin-bottom: 30px;
+.skills-text-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary) !important;
 }
 
-.skills-image-div > img {
-  max-width: 100%;
-  height: auto;
+.skills-text {
+  font-size: 1rem;
+  color: var(--text-secondary) !important;
 }
 
-.skills-heading {
-  font-size: 56px;
-  font-weight: 400;
-}
-.subTitle {
-  color: $subTitle;
+.skills-image-div {
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .skills-heading {
-    font-size: 40px;
+.skills-image-div::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 32px;
+  background: linear-gradient(140deg, rgba(34, 211, 238, 0.25), rgba(124, 58, 237, 0.3));
+  filter: blur(40px);
+  opacity: 0.8;
+}
+
+.skills-image-div > * {
+  position: relative;
+  z-index: 1;
+  width: min(400px, 100%);
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
   }
 }
+
 @media (max-width: 768px) {
-  .skills-heading {
-    font-size: 30px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    line-height: normal;
-  }
-  .skills-main-div {
-    flex-direction: column;
-  }
   .skills-text-div {
-    margin-left: 0px;
-    margin: 20px;
-  }
-  .skills-text {
-    font-size: 16px;
-  }
-  .skills-text-subtitle {
-    font-size: 16px;
     text-align: center;
-  }
-  .skills-image-div {
-    /* display: none; */
-    order: 2;
   }
 }

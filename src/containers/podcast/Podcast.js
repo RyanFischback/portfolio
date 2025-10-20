@@ -36,9 +36,9 @@ export default function Podcast() {
               );
             }
             return (
-              <div key={i}>
+              <div key={i} className="podcast">
                 <iframe
-                  className="podcast"
+                  className="podcast-embed"
                   src={podcastLink}
                   frameBorder="0"
                   scrolling="no"

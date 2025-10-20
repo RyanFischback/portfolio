@@ -3,20 +3,32 @@
 #topButton {
   visibility: hidden;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 32px;
+  right: 32px;
   z-index: 99;
+  width: 56px;
+  height: 56px;
   border: none;
   outline: none;
-  background-color: $buttonColor;
-  color: white;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed, #22d3ee);
+  color: #f8fafc;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 15px;
-  font-size: 25px;
+  font-size: 1.3rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 25px 50px -25px rgba(124, 58, 237, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #topButton:hover {
-  background-color: $topButtonHover;
-  transition: all ease-in-out 0.2s;
+  transform: translateY(-6px);
+  box-shadow: 0 35px 70px -35px rgba(34, 211, 238, 0.6);
+}
+
+@media (max-width: 768px) {
+  #topButton {
+    bottom: 20px;
+    right: 20px;
+  }
 }

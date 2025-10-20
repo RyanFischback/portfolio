@@ -1,156 +1,128 @@
 @import "../../_globalColor";
 
-.experience-card {
+.experience-card,
+.experience-card-dark {
   position: relative;
-  background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
+  border-radius: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--surface-shadow);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .experience-card-dark {
-  position: relative;
-  background-color: $darkBackground;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
+  background: var(--surface-color);
 }
 
-.experience-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+.experience-card:hover,
+.experience-card-dark:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px -40px rgba(124, 58, 237, 0.65);
 }
 
 .experience-banner {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 150%;
+  height: 180px;
   background: $experienceCardBannerLG;
-  border-radius: 10px 10px 0px 0px;
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
-  height: 11rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.experience-blurred_div {
+.experience-banner::after {
+  content: "";
   position: absolute;
-  background: $experienceCardBlurredDivLG;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-  height: 11rem;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-radius: 10px 10px 0px 0px;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0) 20%, rgba(2, 6, 23, 0.45));
 }
 
 .experience-div-company {
   position: absolute;
-  background: transparent;
-  height: 9rem;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
 }
 
 .experience-text-company {
-  text-align: center;
-  padding: 1.5rem;
   margin: 0;
-  color: $lightBackground1;
-  font-size: 25px;
-  text-align: center;
+  color: #f8fafc;
+  font-size: 1.4rem;
   font-weight: 700;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  text-shadow: 0 12px 30px rgba(2, 6, 23, 0.5);
 }
 
 .experience-roundedimg {
-  position: absolute;
+  position: relative;
+  margin: -56px auto 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 24px;
   object-fit: cover;
-  left: 0;
-  right: 0;
-  top: 7rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 8rem;
-  height: 8rem;
-  box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
-  border-radius: 50%;
-}
-
-.experience-text-role {
-  text-align: center;
-  color: $textColor;
-  font-weight: 700;
-  font-size: 25px;
-  margin: 0px;
-  padding-top: 1.5rem;
-  line-height: normal;
-}
-.dark-mode-text {
-  color: $textColorDark !important;
-}
-.experience-text-date {
-  text-align: center;
-  color: $textColor;
-  font-size: 20px;
-  margin: 0px;
-  padding-top: 1rem;
-  font-weight: 600;
-}
-
-.experience-text-desc {
-  text-align: center;
+  border: 4px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 45px -20px rgba(15, 23, 42, 0.65);
+  z-index: 2;
+  background: #fff;
 }
 
 .experience-text-details {
-  padding: 1.5rem;
-  margin-top: 2rem;
+  padding: clamp(1.8rem, 4vw, 2.4rem);
+  text-align: center;
 }
 
-/* Media Query */
-
-@media (max-width: 1380px) {
-  .experience-text-role {
-    padding-top: 0.5rem;
-    font-size: 22px;
-  }
-  .experience-text-company {
-    font-size: 22px;
-  }
-  .experience-text-date {
-    font-size: 18px;
-  }
-  .experience-roundedimg {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
+.experience-text-role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
 }
 
-@media (max-width: 768px) {
-  .experience-text-role {
-    font-size: 22px;
-  }
-  .experience-text-company {
-    font-size: 22px;
-  }
-  .experience-text-date {
-    font-size: 18px;
-  }
-  .experience-text-desc {
-    font-size: 16px;
-  }
+.experience-text-date {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(148, 163, 184, 0.85);
+  margin-bottom: 1rem;
+}
+
+.experience-text-desc {
+  color: var(--text-secondary) !important;
+  margin-bottom: 1.2rem;
+}
+
+.experience-text-details ul {
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.experience-text-details ul li {
+  color: var(--text-secondary) !important;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.experience-text-details ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #7c3aed, #22d3ee);
+  box-shadow: 0 6px 18px -10px rgba(124, 58, 237, 0.8);
+}
+
+.dark-mode-text {
+  color: var(--text-primary) !important;
 }

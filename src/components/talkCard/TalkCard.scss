@@ -1,125 +1,61 @@
 @import "../../_globalColor";
 
-.container {
-  display: flex;
-  justify-content: center;
-}
-
-/* Rectangle Card Layout */
 .rectangle {
-  background: url(../../assets/images/talksCardBack.svg);
-  width: 380px;
-  height: 300px;
-  border-radius: 4px;
-  box-shadow: 0px 20px 50px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  margin-top: 50px;
-}
-.rectangle:hover {
-  box-shadow: 0 20px 40px $textColorDark;
-}
-.dark-rectangle {
-  box-shadow: 0px 0px 20px 0px;
-}
-.mask {
-  clip: rect(0px, 460px, 220px, 0px);
-  border-radius: 4px;
-  position: absolute;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 24px;
+  padding: clamp(1.8rem, 4vw, 2.4rem);
+  box-shadow: var(--surface-shadow);
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Card  Styling */
+.rectangle:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px -45px rgba(124, 58, 237, 0.6);
+}
+
 .talk-card-title {
-  color: $textColorDark;
-  margin: auto;
-  text-align: left;
-  margin-top: 25px;
-  padding: 0px 0px 40px 30px;
-  font-size: 30px;
-  line-height: normal;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
 }
+
 .talk-card-subtitle {
-  margin-top: 35px;
-  text-align: justify;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-size: 16px;
-  color: $talkCardSubTitle;
-  line-height: 18px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
 }
-.talk-button {
-  background-color: $buttonColor;
-  color: $textColorDark;
-  width: 90px;
-  padding: 10px 18px;
-  border-radius: 3px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  margin-top: 20px;
-  font-size: 14px;
-  cursor: pointer;
-}
-.talk-button:hover {
-  background: $buttonHover;
-}
+
 .card-footer-button-div {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: auto;
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .card-title {
-    font-size: 25px;
-  }
+.talk-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #7c3aed, #22d3ee);
+  color: #f8fafc;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-@media (max-width: 768px) {
-  .mask {
-    clip-path: none;
-    position: relative;
-  }
-  .talk-card-title {
-    margin-top: 30px;
-  }
-  .talk-card-image {
-    width: 100%;
-  }
 
-  .talk-button {
-    background-color: $buttonColor;
-    color: $textColorDark;
-    width: 90px;
-    padding: 10px 18px;
-    border-radius: 3px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin-top: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.2s ease-in;
-  }
-  .talk-button:hover {
-    background: $buttonHover;
-  }
-  .card-footer-button-div {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .square {
-    width: 100%;
-    height: auto;
-    padding-bottom: 30px;
-  }
+.talk-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px -24px rgba(124, 58, 237, 0.7);
 }
