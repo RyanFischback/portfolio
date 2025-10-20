@@ -1,156 +1,166 @@
 @import "../../_globalColor";
 
-.experience-card {
-  position: relative;
-  background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-}
-
+.experience-card,
 .experience-card-dark {
   position: relative;
-  background-color: $darkBackground;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.46));
+  border: 1px solid rgba(127, 90, 240, 0.28);
+  box-shadow: 0 45px 90px -60px rgba(15, 23, 42, 0.85);
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-.experience-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+.light-mode .experience-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(236, 240, 255, 0.82));
+  border-color: rgba(127, 90, 240, 0.18);
+  box-shadow: 0 35px 70px -45px rgba(15, 23, 42, 0.2);
 }
 
 .experience-banner {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 150%;
-  background: $experienceCardBannerLG;
-  border-radius: 10px 10px 0px 0px;
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
-  height: 11rem;
+  position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    var(--experience-banner-color, rgba(127, 90, 240, 0.45)),
+    rgba(20, 184, 166, 0.35)
+  );
+  overflow: hidden;
+}
+
+.experience-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 60%);
+  opacity: 0.6;
 }
 
 .experience-blurred_div {
-  position: absolute;
-  background: $experienceCardBlurredDivLG;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-  height: 11rem;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-radius: 10px 10px 0px 0px;
+  display: none;
 }
 
 .experience-div-company {
-  position: absolute;
-  background: transparent;
-  height: 9rem;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .experience-text-company {
-  text-align: center;
-  padding: 1.5rem;
   margin: 0;
-  color: $lightBackground1;
-  font-size: 25px;
-  text-align: center;
-  font-weight: 700;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.light-mode .experience-text-company {
+  color: $titleColor;
 }
 
 .experience-roundedimg {
-  position: absolute;
+  position: relative;
+  z-index: 1;
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
   object-fit: cover;
-  left: 0;
-  right: 0;
-  top: 7rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 8rem;
-  height: 8rem;
-  box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
-  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 40px -20px rgba(15, 23, 42, 0.8);
 }
 
-.experience-text-role {
-  text-align: center;
-  color: $textColor;
-  font-weight: 700;
-  font-size: 25px;
-  margin: 0px;
-  padding-top: 1.5rem;
-  line-height: normal;
-}
-.dark-mode-text {
-  color: $textColorDark !important;
-}
-.experience-text-date {
-  text-align: center;
-  color: $textColor;
-  font-size: 20px;
-  margin: 0px;
-  padding-top: 1rem;
-  font-weight: 600;
-}
-
-.experience-text-desc {
-  text-align: center;
+.light-mode .experience-roundedimg {
+  border-color: rgba(127, 90, 240, 0.2);
+  box-shadow: 0 20px 40px -22px rgba(15, 23, 42, 0.22);
 }
 
 .experience-text-details {
-  padding: 1.5rem;
-  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  color: rgba(245, 247, 255, 0.78);
 }
 
-/* Media Query */
+.light-mode .experience-text-details {
+  color: rgba(17, 28, 68, 0.68);
+}
 
-@media (max-width: 1380px) {
-  .experience-text-role {
-    padding-top: 0.5rem;
-    font-size: 22px;
+.experience-text-role {
+  margin: 0;
+  font-family: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: $textColorDark;
+}
+
+.light-mode .experience-text-role {
+  color: $titleColor;
+}
+
+.experience-text-date {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 247, 255, 0.55);
+}
+
+.light-mode .experience-text-date {
+  color: rgba(17, 28, 68, 0.48);
+}
+
+.experience-text-desc {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.experience-text-details ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.experience-text-details li {
+  line-height: 1.6;
+  color: inherit;
+}
+
+.experience-text-details li::marker {
+  color: #7f5af0;
+}
+
+@media (max-width: 520px) {
+  .experience-banner {
+    flex-direction: column;
+    text-align: center;
   }
   .experience-text-company {
-    font-size: 22px;
-  }
-  .experience-text-date {
-    font-size: 18px;
+    font-size: 1.1rem;
   }
   .experience-roundedimg {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 64px;
+    height: 64px;
   }
-}
-
-@media (max-width: 768px) {
-  .experience-text-role {
-    font-size: 22px;
+  .experience-text-details {
+    text-align: center;
+    align-items: center;
   }
-  .experience-text-company {
-    font-size: 22px;
-  }
-  .experience-text-date {
-    font-size: 18px;
-  }
-  .experience-text-desc {
-    font-size: 16px;
+  .experience-text-details ul {
+    padding-left: 0;
   }
 }

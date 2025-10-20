@@ -1,30 +1,132 @@
-@import "./globalColor";
+@import "./_globalColor";
 
-.App {
-  text-align: center;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: $appHeaderBG;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(0.625rem + 2vmin);
-  color: $textColorDark;
-}
-
-.App-link {
-  color: $appLink;
+.main {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 6rem) 0;
 }
 
 .subTitle {
   color: $subTitle;
+  font-weight: 400;
+}
+
+.dark-mode .subTitle {
+  color: rgba(245, 247, 255, 0.72);
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #7f5af0 0%, #14b8a6 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-eyebrow {
+  font-size: 0.875rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(245, 247, 255, 0.6);
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.light-mode .section-eyebrow {
+  color: rgba(17, 28, 68, 0.45);
+}
+
+.section-heading {
+  font-family: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(2.65rem, 5vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+  color: $textColorDark;
+}
+
+.light-mode .section-heading {
+  color: $titleColor;
+}
+
+.section-description {
+  max-width: 680px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+  color: rgba(245, 247, 255, 0.76);
+}
+
+.light-mode .section-description {
+  color: rgba(17, 28, 68, 0.68);
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 35px 80px -50px rgba(15, 23, 42, 0.65);
+  border-radius: 28px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.light-mode .glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(244, 247, 255, 0.75));
+  border-color: rgba(127, 90, 240, 0.12);
+  box-shadow: 0 40px 90px -45px rgba(15, 23, 42, 0.2);
+}
+
+.frosted-border {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.frosted-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(127, 90, 240, 0.45), rgba(20, 184, 166, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.frosted-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-grid {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .section-heading {
+    text-align: center;
+  }
+  .section-description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-eyebrow {
+    justify-content: center;
+  }
 }

@@ -1,95 +1,125 @@
 @import "../../_globalColor";
 
 .repo-card-div {
-  color: $githubRepoCardColor;
-  background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: clamp(1.8rem, 3vw, 2.4rem);
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.5));
+  border: 1px solid rgba(127, 90, 240, 0.28);
+  box-shadow: 0 40px 90px -60px rgba(15, 23, 42, 0.85);
+  color: $textColorDark;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
+
+.repo-card-div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(127, 90, 240, 0.28), transparent 65%),
+    radial-gradient(circle at 80% 60%, rgba(244, 114, 182, 0.22), transparent 60%);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.repo-card-div > * {
+  position: relative;
+  z-index: 1;
+}
+
+.light-mode .repo-card-div {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(236, 240, 255, 0.82));
+  color: $titleColor;
+  border-color: rgba(127, 90, 240, 0.15);
+  box-shadow: 0 35px 70px -45px rgba(15, 23, 42, 0.2);
+}
+
 .repo-card-div:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-
-.repo-stats {
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  font-size: 13px;
-  color: $githubRepoCardRepoCardStatsColor;
-}
-
-.repo-left-stat {
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  display: flex;
-}
-
-.language-color {
-  width: 10px;
-  height: 10px;
-  background-color: $githubRepoCardLanguageColorBG;
-  margin-right: 0.25rem;
-  border-radius: 100%;
-}
-
-.repo-left-stat span {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  margin-right: 0.75rem;
+  transform: translateY(-8px);
+  box-shadow: 0 50px 110px -65px rgba(127, 90, 240, 0.85);
 }
 
 .repo-name-div {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
 }
 
 .repo-svg {
-  margin-right: 0.5rem;
-  min-width: 16px;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  opacity: 0.8;
 }
 
 .repo-name {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: $githubRepoCardRepoNameColor;
-  margin-bottom: 0.75rem;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: inherit;
   overflow: hidden;
-  margin: 0px;
-  height: 30px;
-}
-
-.repo-star-svg {
-  margin-right: 0.3rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .repo-description {
-  overflow: hidden;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(245, 247, 255, 0.75);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.dark-card-mode {
-  background-color: $darkBackground;
-  color: $textColorDark;
-}
-.dark-card-mode p {
-  color: $textColorDark;
+.light-mode .repo-description {
+  color: rgba(17, 28, 68, 0.68);
 }
 
-.dark-card-mode .repo-svg {
-  fill: $textColorDark;
+.repo-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 247, 255, 0.55);
 }
 
-.dark-card-mode:hover {
-  background-color: $buttonColor !important;
-  box-shadow: 0px 0px 16px $darkBoxShadow;
+.light-mode .repo-stats {
+  color: rgba(17, 28, 68, 0.55);
+}
+
+.repo-left-stat {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.repo-left-stat span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.language-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7f5af0, #14b8a6);
+  box-shadow: 0 0 12px rgba(127, 90, 240, 0.6);
+}
+
+.repo-star-svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  opacity: 0.8;
 }

@@ -26,21 +26,17 @@ function Header() {
 
   return (
     <Headroom>
-      <header className={isDark ? "dark-menu header" : "header"}>
+      <header className={`header ${isDark ? "is-dark" : "is-light"}`}>
         <a href="/" className="logo">
           <span className="grey-color"> &lt;</span>
           <span className="logo-name">{greeting.username}</span>
           <span className="grey-color">/&gt;</span>
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "white"}}
-        >
+        <label className="menu-icon" htmlFor="menu-btn">
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
+        <ul className="menu">
           {viewSkills && (
             <li>
               <a href="#skills">Skills</a>

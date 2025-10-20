@@ -1,39 +1,56 @@
 @import "../../_globalColor";
 
-.podcast-header-title {
-  font-size: 56px;
-  font-weight: 400;
-  line-height: 0px;
+.podcast-header {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.podcast {
-  width: 600px;
+.podcast-header-title {
+  font-family: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: $textColorDark;
+}
+
+.light-mode .podcast-header-title {
+  color: $titleColor;
+}
+
+.podcast-header-subtitle {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .podcast-main-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
-}
-.subTitle {
-  color: $subTitle;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  justify-items: center;
 }
 
-@media (max-width: 768px) {
-  .podcast-header-title {
-    font-size: 30px;
-    text-align: center;
-  }
-  .podcast-header-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
+.podcast {
+  width: 100%;
+  min-height: 182px;
+  border-radius: 20px;
+  border: 1px solid rgba(127, 90, 240, 0.28);
+  box-shadow: 0 30px 70px -45px rgba(15, 23, 42, 0.75);
+  background: rgba(10, 15, 30, 0.65);
+}
 
+.light-mode .podcast {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(127, 90, 240, 0.18);
+  box-shadow: 0 30px 70px -45px rgba(15, 23, 42, 0.22);
+}
+
+@media (max-width: 480px) {
   .podcast {
-    width: 300px;
-  }
-  .podcast-main-div {
-    text-align: center;
+    min-height: 220px;
   }
 }

@@ -1,31 +1,66 @@
 @import "../../_globalColor";
 
 .dev-icons {
-  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  padding: 0;
   list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
 }
 
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.85rem 0.75rem;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(127, 90, 240, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light-mode .software-skill-inline {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(236, 240, 255, 0.82));
+  border-color: rgba(127, 90, 240, 0.15);
+  box-shadow: 0 20px 45px -30px rgba(15, 23, 42, 0.25);
 }
 
 .software-skill-inline > i {
-  color: $subTitle;
+  font-size: 1.8rem;
+  color: rgba(245, 247, 255, 0.85);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
+.light-mode .software-skill-inline > i {
+  color: rgba(17, 28, 68, 0.75);
 }
+
 .software-skill-inline > p {
-  color: $subTitle;
-  font-size: 10px;
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 247, 255, 0.6);
 }
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+
+.light-mode .software-skill-inline > p {
+  color: rgba(17, 28, 68, 0.45);
+}
+
+.software-skill-inline:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px -35px rgba(127, 90, 240, 0.7);
+}
+
+.software-skill-inline:hover > i {
+  color: #7f5af0;
+  transform: scale(1.08);
+}
+
+@media (max-width: 600px) {
+  .dev-icons {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
 }

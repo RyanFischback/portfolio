@@ -1,23 +1,26 @@
 .centerContent {
   text-align: center;
-  margin: auto;
-  display: block;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.42));
+  border: 1px solid rgba(127, 90, 240, 0.25);
+  box-shadow: 0 35px 80px -55px rgba(15, 23, 42, 0.85);
 }
-.tw-main-div {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  width: auto;
-  padding: 1.5rem;
+
+.light-mode .centerContent {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(236, 240, 255, 0.82));
+  border-color: rgba(127, 90, 240, 0.18);
+  box-shadow: 0 30px 70px -45px rgba(15, 23, 42, 0.22);
 }
+
+.tw-main-div,
 .twitter-component {
-  width: auto;
-  padding: 1.5rem;
+  width: 100%;
 }
 
 .timeline-Header-title {
-  font-size: 56px;
-  font-weight: 100 !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-weight: 600 !important;
+  font-family: "Space Grotesk", "Plus Jakarta Sans", sans-serif !important;
 }

@@ -1,90 +1,113 @@
 @import "../../_globalColor";
 
 .social-media-div {
-  font-size: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .icon-button {
-  margin-bottom: 10px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 999px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(127, 90, 240, 0.6), rgba(20, 184, 166, 0.6));
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.icon-button::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: rgba(15, 23, 42, 0.85);
+  transition: background 0.3s ease;
+}
+
+.light-mode .icon-button::after {
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .icon-button i {
-  color: $textColorDark;
-  border-radius: 2.6rem;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1.3rem;
-  height: 2.6rem;
-  line-height: 2.6rem;
-  margin: 0 5px;
   position: relative;
-  text-align: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 2.6rem;
-  margin-bottom: 10px;
-  transition: 0.2s ease-in;
+  z-index: 1;
+  font-size: 1.25rem;
+  color: #fff;
+  transition: transform 0.3s ease;
 }
 
-.facebook i {
-  background-color: $faceBook;
+.light-mode .icon-button i {
+  color: $titleColor;
 }
 
-.linkedin i {
-  background-color: $linkedin;
+.icon-button:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 18px 38px -18px rgba(127, 90, 240, 0.75);
 }
 
-.github i {
-  background-color: $github;
+.icon-button:hover::before {
+  opacity: 1;
 }
 
-.gitlab i {
-  background-color: $gitlab;
+.icon-button:hover i {
+  transform: scale(1.08);
 }
 
-.google i {
-  background-color: $google;
+.icon-button.github::before {
+  background: linear-gradient(135deg, rgba(128, 90, 240, 0.8), rgba(244, 114, 182, 0.7));
 }
 
-.twitter i {
-  background-color: $twitter;
+.icon-button.linkedin::before {
+  background: linear-gradient(135deg, rgba(14, 118, 168, 0.85), rgba(56, 189, 248, 0.7));
 }
 
-.medium i {
-  background-color: $medium;
+.icon-button.google::before {
+  background: linear-gradient(135deg, rgba(234, 67, 53, 0.85), rgba(251, 188, 5, 0.7));
 }
 
-.stack-overflow i {
-  background-color: $stackoverflow;
+.icon-button.twitter::before {
+  background: linear-gradient(135deg, rgba(29, 155, 240, 0.85), rgba(56, 189, 248, 0.6));
 }
 
-.kaggle i {
-  background-color: $kaggle;
+.icon-button.instagram::before {
+  background: linear-gradient(135deg, rgba(255, 95, 109, 0.85), rgba(255, 195, 113, 0.7));
 }
 
-.instagram i {
-  background-color: $instagram;
+.icon-button.gitlab::before {
+  background: linear-gradient(135deg, rgba(252, 163, 38, 0.85), rgba(244, 114, 182, 0.65));
 }
 
-/* Hover Transition */
-.twitter i:hover,
-.google i:hover,
-.gitlab i:hover,
-.github i:hover,
-.linkedin i:hover,
-.facebook i:hover,
-.instagram i:hover,
-.stack-overflow i:hover,
-.kaggle i:hover,
-.medium i:hover {
-  background-color: $textColor;
+.icon-button.medium::before {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9), rgba(79, 70, 229, 0.55));
 }
 
-/* Media Query */
+.icon-button.stack-overflow::before {
+  background: linear-gradient(135deg, rgba(244, 128, 36, 0.85), rgba(251, 191, 36, 0.65));
+}
+
+.icon-button.kaggle::before {
+  background: linear-gradient(135deg, rgba(32, 190, 255, 0.85), rgba(14, 165, 233, 0.6));
+}
+
+.icon-button.facebook::before {
+  background: linear-gradient(135deg, rgba(24, 119, 242, 0.85), rgba(59, 130, 246, 0.65));
+}
+
 @media (max-width: 768px) {
   .social-media-div {
-    text-align: center;
+    justify-content: center;
   }
 }
