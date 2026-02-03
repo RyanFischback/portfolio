@@ -170,49 +170,56 @@ const workExperiences = {
   display: true,
   experience: [
     {
+      role: "Senior Software Engineer",
+      company: "Rover",
+      companylogo: require("./assets/images/rover.jpeg"),
+      date: "Nov 2025 - Present",
+      descBullets: [
+        "Owned frontend architecture, aligning design systems, implementation, and AI tooling.",
+        "Managed frontend project scope and delivery, ensuring predictable execution and quality outcomes."
+      ]
+    },
+    {
       role: "Software Engineer",
       company: "VGen",
       companylogo: require("./assets/images/vglogo.png"),
-      date: "Oct 2024 – Sept 2025",
+      date: "Oct 2024 – Nov 2025",
       descBullets: [
-        "Built and shipped software solutions serving 550,000+ registered users, ensuring seamless, scalable experiences.",
-        "Optimized cloud infrastructure and deployment pipelines to support 50,000+ concurrent users with minimal downtime during updates.",
-        "Delivered real-time performance enhancements and live updates, improving reliability and user satisfaction.",
+        "Led and shipped scalable web solutions serving 550k+ registered users, ensuring seamless, high-quality experiences.",
+        "Optimized cloud infrastructure & deployment pipelines to support 50k+ concurrent users with minimal downtime during updates.",
         "Built internal moderation tooling that streamlines operations for trust & safety teams."
       ]
     },
     {
       role: "Full Stack Developer",
-      company: "Modest Tree Media Inc",
+      company: "Modest Tree",
       companylogo: require("./assets/images/modesttree.png"),
       date: "May 2023 – June 2024",
       descBullets: [
-        "Technical lead integrating an LLM-powered chatbot (Python, TypeScript, Docker), improving client data workflows and accelerating operations.",
-        "Architected and containerized full-stack apps with Docker, streamlining CI/CD and reducing onboarding time for developers.",
-        "Developed interactive analytics dashboards, enabling product and admin teams to make faster, data-driven decisions.",
-        "Enhanced React, TypeScript, and .NET applications, resulting in higher stability, fewer bugs, and better UX."
+        "Led a team in integrating an LLM-powered chatbot (Python, TypeScript, Docker), improving client data operations.",
+        "Architected and containerized full-stack apps with Docker, reducing onboarding time and streamlining CI/CD pipelines.",
+        "Developed interactive analytics dashboards, enabling product and admin teams to make faster, data-driven decisions."
       ]
     },
     {
-      role: "Software Developer / Data Steward (Multiple Roles)",
+      role: "Software Developer / Data Steward",
       company: "Clearwater Seafoods LP",
       companylogo: require("./assets/images/clearwater.png"),
-      date: "May 2019 – Aug 2022",
+      date: "2019 - 2022",
       descBullets: [
-        "Built C# and SQL automation that replaced manual data entry, saving 10 hrs/week and improving data reliability.",
+        "Led C# and SQL automation that replaced manual data entry, saving 10 hrs/week and improving data reliability.",
         "Built SSRS reports that gave leadership visibility into product effectiveness and guided strategic decisions.",
-        "Enhanced ASP.NET and SQL applications, improving functionality and system reliability across departments.",
-        "Launched an object detection system to track and reduce product waste on vessels, improving operational insight."
+        "Developed an object detection system to track and reduce product waste on vessels, improving operational insight."
       ]
     },
     {
-      role: "Software Developer (Internship)",
-      company: "Garvin-Allen Solutions Ltd",
+      role: "Software Developer",
+      company: "Garvin-Allen Solutions Limited",
       companylogo: require("./assets/images/gaLogo.jpg"),
       date: "May 2021 – Aug 2021",
       descBullets: [
-        "Engineered automated test suites with Ranorex, reducing manual QA time and increasing release confidence.",
-        "Improved data quality processes, raising software reliability across core product lines."
+        "Engineered automated test suites with Ranorex, cutting QA time significantly and improving release confidence.",
+        "Improved data quality processes, leading to higher product reliability and fewer critical bugs."
       ]
     }
   ]
