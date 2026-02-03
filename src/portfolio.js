@@ -194,7 +194,7 @@ const workExperiences = {
       role: "Full Stack Developer",
       company: "Modest Tree",
       companylogo: require("./assets/images/modesttree.png"),
-      date: "May 2023 – June 2024",
+      date: "May 2023 – Oct 2024",
       descBullets: [
         "Led a team in integrating an LLM-powered chatbot (Python, TypeScript, Docker), improving client data operations.",
         "Architected and containerized full-stack apps with Docker, reducing onboarding time and streamlining CI/CD pipelines.",
