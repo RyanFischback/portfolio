@@ -23,7 +23,7 @@ const greeting = {
   username: "Ryan Fischback",
   title: "Hi there, I'm Ryan",
   subTitle: emoji(
-    "A full-stack developer 🚀 who builds systems that are practical in design, scalable in growth, and aligned with real business impact! Based in Canada."
+    "A full-stack developer 🚀 who builds systems that are practical in design, scalable in growth, and aligned with real business impact! Based in Toronto, Canada."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1SWs9IWj8EqV0KhzAvFY94Zp7BSMPnL5j/view?usp=sharing", // Set to empty to hide the button
@@ -253,6 +253,18 @@ const bigProjects = {
         {
           name: "View Winners",
           url: "https://vgen.co/challenge/jul-2025"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/factly.png"),
+      projectName: "Factly (iOS App)",
+      projectDesc:
+        "Factly is a beautifully designed iOS app that delivers bite-sized, fascinating facts across science, history, nature, space, and more. Built for curiosity and daily discovery, Factly offers a distraction-free experience that makes learning something new every day effortless and enjoyable.",
+      footerLink: [
+        {
+          name: "View on App Store",
+          url: "https://apps.apple.com/us/app/factly/id6758357204"
         }
       ]
     },
