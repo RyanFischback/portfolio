@@ -176,7 +176,8 @@ const workExperiences = {
       date: "Nov 2025 - Present",
       descBullets: [
         "Owned frontend architecture, aligning design systems, implementation, and AI tooling.",
-        "Managed frontend project scope and delivery, ensuring predictable execution and quality outcomes."
+        "Managed frontend project scope and delivery, ensuring predictable execution and quality outcomes.",
+        "Mentored engineers and supported technical growth through regular feedback and collaboration",
       ]
     },
     {
