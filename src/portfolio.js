@@ -256,9 +256,21 @@ const bigProjects = {
         }
       ]
     },
+        {
+      image: require("./assets/images/fin.png"),
+      projectName: "Fin",
+      projectDesc:
+        "Spend less time tracking where your money went, and more time deciding where it should go next.",
+      footerLink: [
+        {
+          name: "View on App Store",
+          url: "https://usefinapp.com/"
+        }
+      ]
+    },
     {
       image: require("./assets/images/factly.png"),
-      projectName: "Factly (iOS App)",
+      projectName: "Factly",
       projectDesc:
         "Factly is a beautifully designed iOS app that delivers bite-sized, fascinating facts across science, history, nature, space, and more. Built for curiosity and daily discovery, Factly offers a distraction-free experience that makes learning something new every day effortless and enjoyable.",
       footerLink: [
@@ -270,7 +282,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/coverly.png"),
-      projectName: "Coverly (Personal)",
+      projectName: "Coverly",
       projectDesc:
         "Coverly is a user-friendly web application designed to streamline the process of generating professional cover letters through user-provided prompts. This project aims to offer a seamless and efficient experience, enabling users to create personalized and impactful cover letters with minimal effort. ",
       footerLink: [
@@ -282,7 +294,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/dalLogo.png"),
-      projectName: "The Green Card (Dalhousie University)",
+      projectName: "The Green Card",
       projectDesc:
         "The Green Card is a MVP web application implemented for the purpose of converting an informational brochure to be used by Nova Scotia health professionals.",
       footerLink: [
@@ -294,7 +306,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/clearwater.png"),
-      projectName: "Object Tracker (Clearwater Seafoods LP)",
+      projectName: "Object Tracker",
       projectDesc:
         "Computer vision project that tracks specific objects using the Euclidean distance algorithm. The project focuses on accurately identifying and monitoring objects in real-time.",
       footerLink: [
