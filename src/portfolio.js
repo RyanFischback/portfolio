@@ -259,7 +259,7 @@ const bigProjects = {
         "Spend less time tracking where your money went, and more time deciding where it should go next.",
       footerLink: [
         {
-          name: "Download on App Store",
+          name: "Get started",
           url: "https://usefinapp.com/"
         }
       ]
@@ -271,7 +271,7 @@ const bigProjects = {
         "Factly is a beautifully designed iOS app that delivers bite-sized, fascinating facts across science, history, nature, space, and more. Built for curiosity and daily discovery, Factly offers a distraction-free experience that makes learning something new every day effortless and enjoyable.",
       footerLink: [
         {
-          name: "Try now",
+          name: "Check out on App Store",
           url: "https://apps.apple.com/us/app/factly/id6758357204"
         }
       ]
