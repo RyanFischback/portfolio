@@ -249,10 +249,6 @@ const bigProjects = {
         {
           name: "Explore Challenges",
           url: "https://vgen.co/challenge"
-        },
-        {
-          name: "View Winners",
-          url: "https://vgen.co/challenge/jul-2025"
         }
       ]
     },
@@ -263,7 +259,7 @@ const bigProjects = {
         "Spend less time tracking where your money went, and more time deciding where it should go next.",
       footerLink: [
         {
-          name: "View on App Store",
+          name: "Download on App Store",
           url: "https://usefinapp.com/"
         }
       ]
@@ -275,7 +271,7 @@ const bigProjects = {
         "Factly is a beautifully designed iOS app that delivers bite-sized, fascinating facts across science, history, nature, space, and more. Built for curiosity and daily discovery, Factly offers a distraction-free experience that makes learning something new every day effortless and enjoyable.",
       footerLink: [
         {
-          name: "View on App Store",
+          name: "Try now",
           url: "https://apps.apple.com/us/app/factly/id6758357204"
         }
       ]
@@ -287,7 +283,7 @@ const bigProjects = {
         "Coverly is a user-friendly web application designed to streamline the process of generating professional cover letters through user-provided prompts. This project aims to offer a seamless and efficient experience, enabling users to create personalized and impactful cover letters with minimal effort. ",
       footerLink: [
         {
-          name: "Visit Project",
+          name: "Get started",
           url: "https://coverly.ca/"
         }
       ]
