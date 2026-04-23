@@ -244,7 +244,7 @@ const bigProjects = {
       image: require("./assets/images/vglogo.png"),
       projectName: "#VGenChallenge (VGen)",
       projectDesc:
-        "Where creativity meets community! Artists can enter themed challenges, showcase their work, and rally support as the community votes for their favorites. Winners earn recognition, exclusive badges, and exciting prizes, making every challenge a celebration of talent.",
+        "Community art challenges where creators submit work and the audience votes for winners.",
       footerLink: [
         {
           name: "Explore Challenges",
@@ -252,7 +252,7 @@ const bigProjects = {
         }
       ]
     },
-        {
+    {
       image: require("./assets/images/fin.png"),
       projectName: "Fin",
       projectDesc:
@@ -268,7 +268,7 @@ const bigProjects = {
       image: require("./assets/images/factly.png"),
       projectName: "Factly",
       projectDesc:
-        "Factly is a beautifully designed iOS app that delivers bite-sized, fascinating facts across science, history, nature, space, and more. Built for curiosity and daily discovery, Factly offers a distraction-free experience that makes learning something new every day effortless and enjoyable.",
+        "An iOS app for learning one interesting fact at a time across everyday topics.",
       footerLink: [
         {
           name: "Check out on App Store",
@@ -280,10 +280,10 @@ const bigProjects = {
       image: require("./assets/images/coverly.png"),
       projectName: "Coverly",
       projectDesc:
-        "Coverly is a user-friendly web application designed to streamline the process of generating professional cover letters through user-provided prompts. This project aims to offer a seamless and efficient experience, enabling users to create personalized and impactful cover letters with minimal effort. ",
+        "A simple web app that turns prompts into polished, personalized cover letters.",
       footerLink: [
         {
-          name: "Get started",
+          name: "View project",
           url: "https://coverly.ca/"
         }
       ]
@@ -292,7 +292,7 @@ const bigProjects = {
       image: require("./assets/images/dalLogo.png"),
       projectName: "The Green Card",
       projectDesc:
-        "The Green Card is a MVP web application implemented for the purpose of converting an informational brochure to be used by Nova Scotia health professionals.",
+        "An MVP that turned a static health brochure into a usable web experience.",
       footerLink: [
         {
           name: "Visit Project",
@@ -304,7 +304,7 @@ const bigProjects = {
       image: require("./assets/images/clearwater.png"),
       projectName: "Object Tracker",
       projectDesc:
-        "Computer vision project that tracks specific objects using the Euclidean distance algorithm. The project focuses on accurately identifying and monitoring objects in real-time.",
+        "A computer vision tracker that follows objects in real time using distance matching.",
       footerLink: [
         {
           name: "Visit Project",
