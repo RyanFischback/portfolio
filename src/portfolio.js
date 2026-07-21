@@ -212,16 +212,6 @@ const workExperiences = {
         "Built SSRS reports that gave leadership visibility into product effectiveness and guided strategic decisions.",
         "Developed an object detection system to track and reduce product waste on vessels, improving operational insight."
       ]
-    },
-    {
-      role: "Software Developer",
-      company: "Garvin-Allen Solutions Limited",
-      companylogo: require("./assets/images/gaLogo.jpg"),
-      date: "May 2021 – Aug 2021",
-      descBullets: [
-        "Engineered automated test suites with Ranorex, cutting QA time significantly and improving release confidence.",
-        "Improved data quality processes, leading to higher product reliability and fewer critical bugs."
-      ]
     }
   ]
 };
