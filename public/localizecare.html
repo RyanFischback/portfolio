@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>LocalizeCare | Ryan Fischback</title>
+    <meta
+      name="description"
+      content="LocalizeCare monitoring service — what it covers, how to reach support, and refund terms."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --accent: #55198b;
+        --accent-hover: #8c43ce;
+        --bg: #ffffff;
+        --bg-alt: #f5f2f4;
+        --text: #000000;
+        --text-muted: #666666;
+        --border: #e4e0e6;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --accent: #8c43ce;
+          --accent-hover: #a76ddb;
+          --bg: #171c28;
+          --bg-alt: #1f2532;
+          --text: #ffffff;
+          --text-muted: #a8b0bd;
+          --border: #2c3444;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Montserrat", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      .back {
+        display: inline-block;
+        margin-bottom: 2.5rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        text-decoration: none;
+      }
+
+      .back:hover {
+        color: var(--accent-hover);
+      }
+
+      h1 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin: 0 0 0.5rem;
+      }
+
+      .lede {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        margin: 0 0 3rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin: 2.75rem 0 0.75rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+
+      h2:first-of-type {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      p {
+        margin: 0 0 1rem;
+      }
+
+      ul {
+        margin: 0 0 1rem;
+        padding-left: 1.25rem;
+      }
+
+      li {
+        margin-bottom: 0.4rem;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      a:hover {
+        color: var(--accent-hover);
+      }
+
+      .contact-box {
+        background: var(--bg-alt);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        margin: 1rem 0;
+      }
+
+      .contact-box a {
+        font-weight: 600;
+        font-size: 1.05rem;
+        word-break: break-all;
+      }
+
+      .meta {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin-top: 3.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .terms {
+        background: var(--bg-alt);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem 1.25rem;
+        margin: 1rem 0;
+        list-style: none;
+      }
+
+      .terms li {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .terms li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .terms .label {
+        color: var(--text-muted);
+      }
+
+      .terms .value {
+        font-weight: 600;
+        text-align: right;
+      }
+
+      @media (max-width: 520px) {
+        .wrap {
+          padding-top: 2rem;
+        }
+
+        h1 {
+          font-size: 1.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <a class="back" href="/">&larr; Ryan Fischback</a>
+
+      <h1>LocalizeCare</h1>
+      <p class="lede">Monitoring service — coverage, support, and refunds.</p>
+
+      <h2>What the service does</h2>
+      <p>
+        LocalizeCare is a human-reviewed monitoring service for agencies that
+        maintain multilingual websites. After site updates, I check public
+        pages for quiet localization regressions:
+      </p>
+      <ul>
+        <li>Page-language metadata that doesn't match the content</li>
+        <li>Alternate-language relationships that aren't reciprocal</li>
+        <li>Language switchers that land on the wrong page</li>
+        <li>Customer-facing controls falling back to the wrong language</li>
+      </ul>
+      <p>
+        Findings arrive as a short weekly exception report. Each issue includes
+        the URL, locale, expected and actual behavior, reproduction steps,
+        evidence, and a suggested owner, and previously reported issues are
+        rechecked for open or resolved status.
+      </p>
+      <p>
+        Checks cover public pages only — no credentials, no installations, no
+        site changes.
+      </p>
+
+      <h2>Pilot terms</h2>
+      <p>The service currently runs as a 30-day pilot.</p>
+      <ul class="terms">
+        <li>
+          <span class="label">Price</span>
+          <span class="value">$249 CAD</span>
+        </li>
+        <li>
+          <span class="label">Term</span>
+          <span class="value">30 days, no automatic renewal</span>
+        </li>
+        <li>
+          <span class="label">Sites covered</span>
+          <span class="value">Up to 10</span>
+        </li>
+        <li>
+          <span class="label">Reporting</span>
+          <span class="value">One verified report each week</span>
+        </li>
+      </ul>
+      <p>
+        Pilots start by email — get in touch below and I'll send a one-page
+        scope.
+      </p>
+
+      <h2>Refund policy</h2>
+      <p>
+        Every pilot includes a first-report guarantee. If the first weekly
+        report isn't useful, email me within 3 days of receiving it and I'll
+        refund the full $249 CAD — no justification required. Refunds go back
+        to the original payment method via Stripe and typically arrive within
+        5–10 business days.
+      </p>
+      <p>
+        After the first-report window closes, the pilot is non-refundable and
+        runs to the end of its 30-day term.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about the service, billing, or a refund request all go to the
+        same place. Email is the only support channel, and messages are
+        answered by Ryan Fischback directly.
+      </p>
+      <div class="contact-box">
+        <a href="mailto:rfischbackdev@gmail.com">rfischbackdev@gmail.com</a>
+      </div>
+
+      <p class="meta">
+        LocalizeCare is operated by Ryan Fischback, Toronto, Canada.
+      </p>
+    </main>
+  </body>
+</html>

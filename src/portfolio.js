@@ -34,7 +34,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/ryanfischback",
   linkedin: "https://www.linkedin.com/in/ryanfischback/",
-  gmail: "rfischback2@gmail.com",
+  gmail: "rfischbackdev@gmail.com",
   display: true // Set true to display this section, defaults to false
 };
 
@@ -430,7 +430,7 @@ const contactInfo = {
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
   // number: "+92-0000000000",
-  email_address: "rfischback2@gmail.com"
+  email_address: "rfischbackdev@gmail.com"
 };
 
 // Twitter Section
