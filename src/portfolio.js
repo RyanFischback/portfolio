@@ -175,9 +175,10 @@ const workExperiences = {
       companylogo: require("./assets/images/rover.jpeg"),
       date: "Nov 2025 - Present",
       descBullets: [
-        "Owned frontend architecture, aligning design systems, implementation, and AI tooling.",
-        "Managed frontend project scope and delivery, ensuring predictable execution and quality outcomes.",
-        "Mentored engineers and supported technical growth through regular feedback and collaboration",
+        "Own complex product initiatives end to end, from discovery and product scoping through hands-on implementation and delivery.",
+        "Translate ambiguous product problems into technical requirements, architecture, and pragmatic implementation plans.",
+        "Design and build integration-heavy systems spanning high-volume, time-sensitive data, messaging, and third-party platforms.",
+        "Navigate tradeoffs across reliability, scalability, complexity, and delivery speed while mentoring engineers and providing technical direction."
       ]
     },
     {
@@ -186,9 +187,9 @@ const workExperiences = {
       companylogo: require("./assets/images/vglogo.png"),
       date: "Oct 2024 – Nov 2025",
       descBullets: [
-        "Led and shipped scalable web solutions serving 550k+ registered users, ensuring seamless, high-quality experiences.",
-        "Optimized cloud infrastructure & deployment pipelines to support 50k+ concurrent users with minimal downtime during updates.",
-        "Built internal moderation tooling that streamlines operations for trust & safety teams."
+        "Owned core features start to finish, from architecture through deployment, transforming complex Figma-based designs into seamless experiences for over 1M+ registered users.",
+        "Led internal tooling for operations teams that streamlined moderation workflows, improving efficiency and strengthening platform trust & safety.",
+        "Configured GCP infrastructure to support scalable, reliable application performance."
       ]
     },
     {
