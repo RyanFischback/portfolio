@@ -23,7 +23,7 @@ const greeting = {
   username: "Ryan Fischback",
   title: "Hi there, I'm Ryan",
   subTitle: emoji(
-    "A full-stack developer 🚀 who builds systems that are practical in design, scalable in growth, and aligned with real business impact! Based in Toronto, Canada."
+    "A software engineer 🚀 who builds systems that are practical in design, scalable in growth, and aligned with real business impact. Based in Toronto, Canada."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1SWs9IWj8EqV0KhzAvFY94Zp7BSMPnL5j/view?usp=sharing", // Set to empty to hide the button
@@ -42,17 +42,16 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle:
-    "FULL-STACK SOFTWARE ENGINEER DELIVERING SCALABLE SYSTEMS, MODERN CLOUD ARCHITECTURES, AND BUSINESS-DRIVEN SOLUTIONS",
+  subTitle: "SOFTWARE ENGINEER BUILDING AND SCALING PRODUCT SYSTEMS END TO END",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front End / User Interfaces for your web and mobile applications"
+      "⚡ Take product and technical initiatives end to end, from an ambiguous problem through architecture and delivery"
     ),
     emoji(
-      "⚡ Build simple, scalable, and effective backend techonlogies to cut costs, implement new features, and maintain and optimize systems"
+      "⚡ Design and build scalable systems across data, messaging, APIs, integrations, and modern product applications"
     ),
     emoji(
-      "⚡ Integration of third party services and custom development solutions"
+      "⚡ Make pragmatic engineering decisions that balance reliability, scalability, complexity, maintainability, and delivery speed"
     )
   ],
 
@@ -143,27 +142,6 @@ const educationInfo = {
   ]
 };
 
-// Your top 3 proficient stacks/tech experience
-
-const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Backend",
-      progressPercentage: "85%"
-    },
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Dev-Ops",
-      progressPercentage: "70%"
-    }
-  ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
-};
-
 // Work experience section
 
 const workExperiences = {
@@ -193,7 +171,7 @@ const workExperiences = {
       ]
     },
     {
-      role: "Full Stack Developer",
+      role: "Software Engineer",
       company: "Modest Tree",
       companylogo: require("./assets/images/modesttree.png"),
       date: "May 2023 – Oct 2024",
@@ -209,8 +187,8 @@ const workExperiences = {
       companylogo: require("./assets/images/clearwater.png"),
       date: "2019 - 2022",
       descBullets: [
-        "Led C# and SQL automation that replaced manual data entry, saving 10 hrs/week and improving data reliability.",
-        "Built SSRS reports that gave leadership visibility into product effectiveness and guided strategic decisions.",
+        "Built C# and SQL automation that replaced manual data entry, saving 10 hrs/week and improving data reliability.",
+        "Created SSRS reports that gave leadership visibility into product effectiveness and guided strategic decisions.",
         "Developed an object detection system to track and reduce product waste on vessels, improving operational insight."
       ]
     }
@@ -276,30 +254,6 @@ const bigProjects = {
         {
           name: "View project",
           url: "https://coverly.ca/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/dalLogo.png"),
-      projectName: "The Green Card",
-      projectDesc:
-        "An MVP that turned a static health brochure into a usable web experience.",
-      footerLink: [
-        {
-          name: "Visit Project",
-          url: "https://w2023-gpgc.netlify.app/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/clearwater.png"),
-      projectName: "Object Tracker",
-      projectDesc:
-        "A computer vision tracker that follows objects in real time using distance matching.",
-      footerLink: [
-        {
-          name: "Visit Project",
-          url: "https://github.com/RyanFischback/ObjectTracking"
         }
       ]
     }
@@ -450,7 +404,6 @@ export {
   splashScreen,
   skillsSection,
   educationInfo,
-  techStack,
   workExperiences,
   bigProjects,
   openSource,
