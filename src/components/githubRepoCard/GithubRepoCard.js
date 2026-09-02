@@ -37,7 +37,9 @@ export default function GithubRepoCard({repo, isDark}) {
             </svg>
             <p className="repo-name">{repo.node.name}</p>
           </div>
-          <p className="repo-description">{repo.node.description}</p>
+          <p className="repo-description">
+            {repo.node.description || "No description provided."}
+          </p>
           <div className="repo-stats">
             <div className="repo-left-stat">
               {repo.node.primaryLanguage !== null && (

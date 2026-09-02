@@ -11,6 +11,10 @@ export default function GithubProfileCard({prof}) {
   } else {
     prof.hireable = "No";
   }
+  const bio =
+    typeof prof.bio === "string" && prof.bio.trim() !== ""
+      ? prof.bio
+      : contactInfo.bioFallback;
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="contact">
@@ -20,8 +24,8 @@ export default function GithubProfileCard({prof}) {
             <div className="blog-header">
               <p className="subTitle blog-subtitle">{contactInfo.subtitle}</p>
             </div>
-            <h2 className="bio-text">"{emoji(String(prof.bio))}"</h2>
-            {prof.location !== null && (
+            {bio && <h2 className="bio-text">"{emoji(bio)}"</h2>}
+            {prof.location && (
               <div className="location-div">
                 <span className="desc-prof">
                   <svg
