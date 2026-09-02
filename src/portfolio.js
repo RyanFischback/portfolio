@@ -388,7 +388,7 @@ const contactInfo = {
   email_address: "rfischbackdev@gmail.com",
   // Shown on the GitHub profile card when your GitHub bio is empty
   bioFallback:
-    "Software engineer building web apps, APIs, and the systems behind them."
+    "engineer. builder. occasionally offline."
 };
 
 // Twitter Section
